@@ -104,7 +104,7 @@ export default function Index() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream-100/90 backdrop-blur-sm border-b border-gold/20">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#hero" className="font-cormorant text-xl font-semibold tracking-widest text-ink uppercase">
-            Анна&nbsp;<span className="text-gold">Морозова</span>
+            Патимат&nbsp;<span className="text-gold">Закарьяева</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -177,7 +177,7 @@ export default function Index() {
             <div className="relative mx-auto max-w-sm md:max-w-full">
               <div className="absolute -inset-3 border border-gold/30" />
               <div className="absolute -inset-6 border border-gold/10" />
-              <img src={LAWYER_PHOTO} alt="Анна Морозова, юрист"
+              <img src={LAWYER_PHOTO} alt="Патимат Закарьяева, юрист"
                 className="w-full h-auto object-cover"
                 style={{ filter: 'grayscale(30%) contrast(1.05) brightness(0.92)' }}
               />
@@ -226,7 +226,7 @@ export default function Index() {
               </p>
               <div className="mt-8 flex items-center gap-4">
                 <div className="w-8 h-px bg-gold" />
-                <p className="font-golos text-sm text-gold tracking-widest uppercase">Анна Морозова</p>
+                <p className="font-golos text-sm text-gold tracking-widest uppercase">Патимат Закарьяева</p>
               </div>
             </div>
           </div>
@@ -459,7 +459,7 @@ export default function Index() {
       <footer className="bg-ink border-t border-gold/20 py-10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-cormorant text-lg text-cream-200/60 tracking-widest uppercase">
-            Анна&nbsp;<span className="text-gold">Морозова</span>
+            Патимат&nbsp;<span className="text-gold">Закарьяева</span>
           </p>
           <nav className="flex flex-wrap items-center justify-center gap-6">
             {NAV_LINKS.map((l) => (
@@ -469,7 +469,7 @@ export default function Index() {
               </a>
             ))}
           </nav>
-          <p className="font-golos text-xs text-cream-200/20">© 2024 ИП Морозова А.В.</p>
+          <p className="font-golos text-xs text-cream-200/20">© 2024 ИП Закарьяева П.</p>
         </div>
       </footer>
     </div>
