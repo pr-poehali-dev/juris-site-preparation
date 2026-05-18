@@ -39,13 +39,14 @@ const SERVICES = [
 const CASES = [
   {
     category: "Арбитражный спор",
-    title: "Взыскание задолженности по договору поставки",
-    amount: "18,4 млн ₽",
-    result: "Победа",
+    title: "Снижение неустойки по договору поставки в 10 раз",
+    caseNumber: "А58-4294/2024",
+    amount: "× 10",
+    result: "Неустойка снижена",
     resultColor: "text-emerald-700",
-    desc: "Представляла интересы производственной компании в споре с недобросовестным покупателем, уклонявшимся от оплаты товара. Суд полностью удовлетворил требования, включая неустойку.",
-    pdfUrl: "#",
-    year: "2023",
+    desc: "Представляла ответчика в споре по договору поставки. Заявленная истцом неустойка явно несоразмерна последствиям нарушения — на основании ст. 333 ГК РФ суд снизил неустойку в 10 раз, существенно сократив финансовую нагрузку на клиента.",
+    pdfUrl: "https://kad.arbitr.ru/Card?number=%D0%9058-4294%2F2024",
+    year: "2024",
   },
   {
     category: "Корпоративный спор",
@@ -315,6 +316,11 @@ export default function Index() {
                     <div className="flex flex-wrap items-center gap-4 mb-2">
                       <span className="font-golos text-xs tracking-widest uppercase text-gold">{c.category}</span>
                       <span className="font-golos text-xs text-ink/30">{c.year}</span>
+                      {c.caseNumber && (
+                        <span className="font-golos text-xs text-ink/40 tracking-wider border-l border-gold/30 pl-4">
+                          Дело № {c.caseNumber}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-cormorant text-xl md:text-2xl font-medium text-ink group-hover:text-ink/80 transition-colors duration-300">
                       {c.title}
@@ -347,11 +353,11 @@ export default function Index() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 border border-ink/20 text-ink font-golos text-xs tracking-widest uppercase px-5 py-2.5 hover:border-gold hover:text-gold transition-all duration-300"
                       >
-                        <Icon name="FileText" size={14} />
-                        Судебный акт (PDF)
+                        <Icon name={c.caseNumber ? "ExternalLink" : "FileText"} size={14} />
+                        {c.caseNumber ? "Карточка дела на КАД.Арбитр" : "Судебный акт (PDF)"}
                       </a>
                       <span className="font-golos text-xs text-ink/30">
-                        Документ размещён в открытом доступе
+                        {c.caseNumber ? "Открытые данные арбитражных судов РФ" : "Документ размещён в открытом доступе"}
                       </span>
                     </div>
                   </div>
