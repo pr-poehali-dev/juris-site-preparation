@@ -370,10 +370,18 @@ export default function Index() {
                         className="inline-flex items-center gap-2 border border-ink/20 text-ink font-golos text-xs tracking-widest uppercase px-5 py-2.5 hover:border-gold hover:text-gold transition-all duration-300"
                       >
                         <Icon name={c.caseNumber ? "ExternalLink" : "FileText"} size={14} />
-                        {c.caseNumber ? "Карточка дела на КАД.Арбитр" : "Судебный акт (PDF)"}
+                        {c.caseNumber
+                          ? (c.pdfUrl.includes("mos-gorsud.ru")
+                              ? "Карточка дела на сайте суда"
+                              : "Карточка дела на КАД.Арбитр")
+                          : "Судебный акт (PDF)"}
                       </a>
                       <span className="font-golos text-xs text-ink/30">
-                        {c.caseNumber ? "Открытые данные арбитражных судов РФ" : "Документ размещён в открытом доступе"}
+                        {c.caseNumber
+                          ? (c.pdfUrl.includes("mos-gorsud.ru")
+                              ? "Открытые данные судов общей юрисдикции"
+                              : "Открытые данные арбитражных судов РФ")
+                          : "Документ размещён в открытом доступе"}
                       </span>
                     </div>
                   </div>
