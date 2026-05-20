@@ -110,7 +110,7 @@ export const CASES = [
     result: "Иск удовлетворён",
     resultColor: "text-emerald-700",
     desc: "В Симоновском районном суде г. Москвы рассматривалось гражданское дело № 2-1764/25 о взыскании задолженности с ответчика по простому векселю. Судом вынесено решение об удовлетворении исковых требований: взыскан основной долг в размере 260 500 ₽, проценты за пользование денежными средствами — 76 059,14 ₽, а также судебные расходы.",
-    pdfUrl: "https://mos-gorsud.ru/rs/simonovsky/services/cases/civil/?caseNumber=2-1764%2F25",
+    pdfUrl: "https://mos-gorsud.ru/rs/simonovskij/services/cases/civil/details/df5813d0-a831-11ef-9580-230a4a56679a?participant=%D0%91%D0%B0%D1%80%D0%B0%D0%BD%D0%BE%D0%B2",
     year: "2025",
   },
 ];
