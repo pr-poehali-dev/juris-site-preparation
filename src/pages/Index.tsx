@@ -158,8 +158,8 @@ const PRICING = [
     desc: "Юрист на аутсорсе для компаний и ИП: консультации, договоры и сопровождение в рамках месячного тарифа.",
     items: [
       { name: "Тариф «Старт» — до 4 консультаций + 3 документа", price: "25 000 ₽/мес" },
-      { name: "Тариф «Оптимум» — до 8 часов + 6–8 документов", price: "35 000 ₽/мес" },
-      { name: "Тариф «Про» — расширенный объём", price: "55 000 – 70 000 ₽/мес" },
+      { name: "Тариф «Оптимум» — до 8 консультаций + 6–8 документов", price: "35 000 ₽/мес" },
+      { name: "Тариф «Максимум» — расширенный объём", price: "60 000 – 85 000 ₽/мес" },
     ],
   },
 ];
@@ -427,7 +427,12 @@ export default function Index() {
             </a>
           </div>
 
-          <p className="font-golos text-xs text-ink/40 italic text-center mt-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-golos text-sm text-ink/60 text-center mt-10 max-w-2xl mx-auto leading-relaxed">
+            Если ни&nbsp;один из&nbsp;готовых тарифов не&nbsp;отражает специфику вашего бизнеса —
+            на&nbsp;основании конкретных задач я&nbsp;подготовлю <span className="text-ink">индивидуальный тариф</span>,
+            учитывающий объём работы, отраслевые особенности и&nbsp;ожидаемую нагрузку.
+          </p>
+          <p className="font-golos text-xs text-ink/40 italic text-center mt-4 max-w-2xl mx-auto leading-relaxed">
             Цены ориентировочные, не&nbsp;являются публичной офертой. НДС не&nbsp;облагается
             (применяется УСН). Услуги физическим лицам обсуждаются отдельно.
           </p>
