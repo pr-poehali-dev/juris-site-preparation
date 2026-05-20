@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { NAV_LINKS, LAWYER_PHOTO } from "./data";
+import Tag from "./Tag";
 
 export default function HeaderHero() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,40 +9,43 @@ export default function HeaderHero() {
   return (
     <>
       {/* ─── NAVBAR ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-cream-100/90 backdrop-blur-sm border-b border-gold/20">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#hero" className="font-cormorant text-xl font-semibold tracking-widest text-ink uppercase">
-            Патимат&nbsp;<span className="text-gold">Закарьяева</span>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-graphite-900/10">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <a href="#hero" className="flex items-center gap-2 font-golos text-sm font-semibold tracking-tight text-graphite-900">
+            <span className="inline-block w-2 h-2 bg-lime border border-graphite-900" />
+            Patimat&nbsp;Zakaryaeva
+            <span className="text-graphite-400 font-normal hidden sm:inline">/ Law</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {NAV_LINKS.map((l) => (
               <a key={l.href} href={l.href}
-                className="font-golos text-xs tracking-widest uppercase text-ink/60 hover:text-gold transition-colors duration-300">
+                className="font-golos text-[13px] text-graphite-700 hover:text-graphite-900 transition-colors duration-200">
                 {l.label}
               </a>
             ))}
             <a href="#contacts"
-              className="ml-4 bg-ink text-cream-100 text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold hover:text-ink transition-all duration-300">
+              className="ml-2 inline-flex items-center gap-2 bg-graphite-900 text-paper-50 text-[13px] font-medium px-4 py-2 hover:bg-lime hover:text-graphite-900 transition-all duration-300">
               Консультация
+              <Icon name="ArrowUpRight" size={14} />
             </a>
           </nav>
 
-          <button className="md:hidden text-ink" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="md:hidden text-graphite-900" onClick={() => setMenuOpen(!menuOpen)}>
             <Icon name={menuOpen ? "X" : "Menu"} size={22} />
           </button>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden bg-cream-100 border-t border-gold/20 px-6 py-6 flex flex-col gap-5">
+          <div className="md:hidden bg-paper border-t border-graphite-900/10 px-6 py-6 flex flex-col gap-5">
             {NAV_LINKS.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
-                className="font-golos text-sm tracking-widest uppercase text-ink/70 hover:text-gold transition-colors">
+                className="font-golos text-sm text-graphite-800 hover:text-graphite-900 transition-colors">
                 {l.label}
               </a>
             ))}
             <a href="#contacts" onClick={() => setMenuOpen(false)}
-              className="bg-ink text-cream-100 text-xs tracking-widest uppercase px-5 py-3 text-center hover:bg-gold hover:text-ink transition-all duration-300">
+              className="bg-graphite-900 text-paper-50 text-sm font-medium px-5 py-3 text-center">
               Консультация
             </a>
           </div>
@@ -49,57 +53,89 @@ export default function HeaderHero() {
       </header>
 
       {/* ─── HERO ─── */}
-      <section id="hero" className="relative min-h-screen flex items-center bg-ink overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-gold to-transparent opacity-60" />
+      <section id="hero" className="relative pt-28 pb-16 md:pt-32 md:pb-24 bg-paper overflow-hidden">
+        <div className="absolute inset-0 bg-grain opacity-60 pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center pt-24 pb-16">
-          <div>
-            <p className="anim-fade-up d1 font-golos text-xs tracking-[0.3em] uppercase text-gold mb-6">
-              Юридические услуги для бизнеса
-            </p>
-            <h1 className="anim-fade-up d2 font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-cream-100 leading-tight">
-              Право на&nbsp;вашей<br />
-              <em className="text-gold not-italic">стороне</em>
-            </h1>
-            <div className="gold-line-anim mt-6 mb-8" />
-            <p className="anim-fade-up d3 font-golos text-base text-cream-200/70 leading-relaxed max-w-md">
-              Индивидуальная юридическая практика с&nbsp;фокусом на&nbsp;результат.
-              Более&nbsp;10 лет защиты интересов предпринимателей в&nbsp;судах и&nbsp;переговорах.
-            </p>
-            <div className="anim-fade-up d4 flex flex-col sm:flex-row gap-4 mt-10">
-              <a href="#contacts"
-                className="bg-gold text-ink font-golos text-xs tracking-widest uppercase px-8 py-4 text-center hover:bg-gold-light transition-all duration-300">
-                Получить консультацию
-              </a>
-              <a href="#cases"
-                className="border border-cream-200/30 text-cream-200/80 font-golos text-xs tracking-widest uppercase px-8 py-4 text-center hover:border-gold hover:text-gold transition-all duration-300">
-                Смотреть кейсы
-              </a>
-            </div>
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="reveal d1 flex flex-wrap items-center gap-2 mb-10">
+            <Tag variant="lime">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-graphite-900 animate-pulse" />
+              Доступна для новых клиентов
+            </Tag>
+            <Tag variant="outline">B2B Law</Tag>
+            <Tag>Москва · 2026</Tag>
           </div>
 
-          <div className="anim-fade-in relative">
-            <div className="relative mx-auto max-w-sm md:max-w-full">
-              <div className="absolute -inset-3 border border-gold/30" />
-              <div className="absolute -inset-6 border border-gold/10" />
-              <img src={LAWYER_PHOTO} alt="Патимат Закарьяева, юрист"
-                className="w-full h-auto object-cover"
-                style={{ filter: 'grayscale(30%) contrast(1.05) brightness(0.92)' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+          <h1 className="reveal d2 display-headline text-graphite-900 text-[clamp(3.5rem,11vw,10rem)]">
+            Право,<br />
+            <span className="italic font-light">которое</span>
+            <span className="relative inline-block ml-3">
+              <span className="relative z-10 px-2">работает</span>
+              <span className="absolute inset-x-0 bottom-2 h-3 md:h-5 bg-lime -z-0" />
+            </span>
+            <span className="text-graphite-400">.</span>
+          </h1>
+
+          <div className="reveal d3 mt-12 grid md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-7">
+              <p className="font-golos text-base md:text-lg text-graphite-700 leading-relaxed max-w-xl">
+                Юридическая практика, говорящая с&nbsp;бизнесом на&nbsp;одном языке.
+                Более&nbsp;10 лет защищаю интересы компаний и&nbsp;предпринимателей
+                в&nbsp;арбитражах, переговорах и&nbsp;структурировании сделок.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 mt-8">
+                <a href="#contacts"
+                  className="inline-flex items-center justify-center gap-2 bg-graphite-900 text-paper-50 font-golos text-sm font-medium px-7 py-4 hover:bg-lime hover:text-graphite-900 transition-all duration-300">
+                  Получить консультацию
+                  <Icon name="ArrowUpRight" size={16} />
+                </a>
+                <a href="#cases"
+                  className="inline-flex items-center justify-center gap-2 border border-graphite-900 text-graphite-900 font-golos text-sm font-medium px-7 py-4 hover:bg-graphite-900 hover:text-paper-50 transition-all duration-300">
+                  Судебная практика
+                </a>
+              </div>
             </div>
-            <div className="absolute bottom-4 right-4 bg-gold px-5 py-3">
-              <p className="font-cormorant text-3xl font-semibold text-ink">10+</p>
-              <p className="font-golos text-xs uppercase tracking-wider text-ink/80">лет практики</p>
+
+            <div className="md:col-span-5">
+              <div className="relative">
+                <img
+                  src={LAWYER_PHOTO}
+                  alt="Патимат Закарьяева, юрист"
+                  className="w-full h-auto object-cover grayscale"
+                />
+                <div className="absolute top-3 left-3">
+                  <Tag variant="dark">Founding Lawyer</Tag>
+                </div>
+                <div className="absolute bottom-3 right-3 bg-lime px-4 py-2 border border-graphite-900">
+                  <p className="font-golos text-xs uppercase tracking-wider text-graphite-900 font-semibold">10+ лет практики</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream-200/30">
-          <span className="font-golos text-xs tracking-widest uppercase">Прокрутите</span>
-          <Icon name="ChevronDown" size={16} />
+        <div className="reveal d4 mt-20 border-y border-graphite-900/15 bg-paper overflow-hidden">
+          <div className="flex ticker-track whitespace-nowrap py-5">
+            {[...Array(2)].map((_, dup) => (
+              <div key={dup} className="flex items-center shrink-0">
+                {[
+                  "Арбитраж",
+                  "Корпоративное право",
+                  "M&A",
+                  "Защита активов",
+                  "Договорная работа",
+                  "Трудовые споры",
+                  "Налоги",
+                  "Real Estate",
+                ].map((w) => (
+                  <span key={`${dup}-${w}`} className="flex items-center font-cormorant text-3xl md:text-5xl text-graphite-900 px-8 italic">
+                    {w}
+                    <span className="inline-block w-2 h-2 bg-lime border border-graphite-900 mx-8" />
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

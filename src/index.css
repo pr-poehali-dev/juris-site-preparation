@@ -119,3 +119,67 @@ html {
   background: #c9a96e;
   animation: lineGrow 0.9s ease-out 0.3s forwards;
 }
+
+/* ── Modern light style — reveal on scroll ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.d1 {
+  transition-delay: 0.05s;
+}
+.reveal.d2 {
+  transition-delay: 0.15s;
+}
+.reveal.d3 {
+  transition-delay: 0.25s;
+}
+.reveal.d4 {
+  transition-delay: 0.35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Gigantic display headline */
+.display-headline {
+  font-family: "Cormorant", Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+/* Marquee-style ticker */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker 40s linear infinite;
+}
+
+/* Subtle paper grain (CSS only) */
+.bg-grain {
+  background-image: radial-gradient(
+    rgba(10, 10, 10, 0.045) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+}

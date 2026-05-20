@@ -23,6 +23,10 @@ export default {
 				cormorant: ['Cormorant', 'Georgia', 'serif'],
 				golos: ['Golos Text', 'sans-serif'],
 			},
+			fontSize: {
+				'hero': ['clamp(3.5rem, 10vw, 9rem)', { lineHeight: '0.95', letterSpacing: '-0.04em' }],
+				'metric': ['clamp(3rem, 7vw, 6rem)', { lineHeight: '0.9', letterSpacing: '-0.04em' }],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -73,6 +77,27 @@ export default {
 					DEFAULT: '#F5F0E8',
 					100: '#FAF7F2',
 					200: '#F0EAE0',
+				},
+				lime: {
+					DEFAULT: '#D4FF3A',
+					light: '#E5FF7A',
+					dark: '#B8E022',
+				},
+				paper: {
+					DEFAULT: '#FAFAF7',
+					50: '#FFFFFE',
+					100: '#F5F5F1',
+					200: '#EDEDE8',
+					300: '#D9D9D2',
+				},
+				graphite: {
+					DEFAULT: '#0A0A0A',
+					900: '#111111',
+					800: '#1A1A1A',
+					700: '#2A2A2A',
+					500: '#666666',
+					400: '#8A8A8A',
+					300: '#B5B5B5',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
