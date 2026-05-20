@@ -96,10 +96,80 @@ const CASES = [
   },
 ];
 
+const PRICING = [
+  {
+    icon: "Building2",
+    title: "Регистрация и реорганизация",
+    desc: "Создание ООО, ИП, внесение изменений в ЕГРЮЛ, ликвидация, слияние и присоединение компаний.",
+    items: [
+      { name: "Регистрация ООО / ИП «под ключ»", price: "от 15 000 ₽" },
+      { name: "Внесение изменений в ЕГРЮЛ", price: "от 8 000 ₽" },
+      { name: "Реорганизация (слияние, присоединение, выделение)", price: "от 80 000 ₽" },
+      { name: "Добровольная ликвидация ООО", price: "от 60 000 ₽" },
+    ],
+  },
+  {
+    icon: "FileText",
+    title: "Договорная работа",
+    desc: "Разработка и юридический анализ договоров, сопровождение сделок, шаблоны для регулярных операций.",
+    items: [
+      { name: "Разработка договора «под задачу»", price: "от 12 000 ₽" },
+      { name: "Юридическая экспертиза договора", price: "от 7 000 ₽" },
+      { name: "Комплект типовых договоров для бизнеса", price: "от 35 000 ₽" },
+      { name: "Сопровождение крупной сделки", price: "от 80 000 ₽" },
+    ],
+  },
+  {
+    icon: "Scale",
+    title: "Арбитражные споры",
+    desc: "Представительство в арбитражных судах всех инстанций, взыскание долгов, защита от исков.",
+    items: [
+      { name: "Досудебная претензионная работа", price: "от 15 000 ₽" },
+      { name: "Ведение дела в первой инстанции", price: "от 80 000 ₽" },
+      { name: "Апелляция / кассация", price: "от 60 000 ₽" },
+      { name: "Сопровождение исполнительного производства", price: "от 25 000 ₽" },
+    ],
+  },
+  {
+    icon: "Shield",
+    title: "Защита бизнеса и активов",
+    desc: "Структурирование активов, корпоративные конфликты, сопровождение проверок госорганов.",
+    items: [
+      { name: "Аудит правовых рисков компании", price: "от 40 000 ₽" },
+      { name: "Сопровождение корпоративного спора", price: "от 100 000 ₽" },
+      { name: "Сопровождение проверки ФНС / ОБЭП", price: "от 50 000 ₽" },
+      { name: "Структурирование группы компаний", price: "по запросу" },
+    ],
+  },
+  {
+    icon: "Users",
+    title: "Трудовые отношения",
+    desc: "Кадровый аудит, разработка локальных актов, защита работодателя в трудовых спорах.",
+    items: [
+      { name: "Кадровый аудит", price: "от 30 000 ₽" },
+      { name: "Разработка пакета локальных актов", price: "от 25 000 ₽" },
+      { name: "Сопровождение проверки ГИТ", price: "от 35 000 ₽" },
+      { name: "Защита в трудовом споре", price: "от 50 000 ₽" },
+    ],
+  },
+  {
+    icon: "Briefcase",
+    title: "Абонентское обслуживание",
+    desc: "Юрист на аутсорсе для компаний и ИП: консультации, договоры, переговоры в рамках пакета часов.",
+    items: [
+      { name: "Старт — до 5 часов в месяц", price: "от 25 000 ₽/мес" },
+      { name: "Бизнес — до 15 часов в месяц", price: "от 60 000 ₽/мес" },
+      { name: "Премиум — до 30 часов в месяц", price: "от 110 000 ₽/мес" },
+      { name: "Разовая устная консультация", price: "от 5 000 ₽" },
+    ],
+  },
+];
+
 const NAV_LINKS = [
   { label: "Главная", href: "#hero" },
   { label: "О мне", href: "#about" },
   { label: "Услуги", href: "#services" },
+  { label: "Прайс", href: "#pricing" },
   { label: "Кейсы", href: "#cases" },
   { label: "Контакты", href: "#contacts" },
 ];
@@ -306,8 +376,67 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ─── PRICING ─── */}
+      <section id="pricing" className="py-24 bg-cream-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <div>
+              <p className="font-golos text-xs tracking-[0.3em] uppercase text-gold mb-4">Услуги для бизнеса</p>
+              <h2 className="font-cormorant text-4xl md:text-5xl font-light text-ink">Прайс-лист</h2>
+              <div className="w-12 h-px bg-gold mt-4" />
+            </div>
+            <p className="font-golos text-sm text-ink/50 max-w-sm leading-relaxed">
+              Стоимость указана для&nbsp;юридических лиц и&nbsp;индивидуальных предпринимателей.
+              Итоговая цена зависит от&nbsp;объёма работы и&nbsp;согласовывается письменно.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-px bg-gold/20">
+            {PRICING.map((p) => (
+              <div key={p.title} className="bg-cream-100 p-8 flex flex-col">
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="shrink-0 w-12 h-12 border border-gold/40 flex items-center justify-center">
+                    <Icon name={p.icon} size={20} className="text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-cormorant text-2xl font-medium text-ink leading-tight">{p.title}</h3>
+                    <p className="font-golos text-xs text-ink/50 leading-relaxed mt-2">{p.desc}</p>
+                  </div>
+                </div>
+                <ul className="mt-4 divide-y divide-gold/15">
+                  {p.items.map((item) => (
+                    <li key={item.name} className="flex items-baseline justify-between gap-4 py-3">
+                      <span className="font-golos text-sm text-ink/75 leading-snug">{item.name}</span>
+                      <span className="font-cormorant text-lg text-ink whitespace-nowrap">{item.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 border border-gold/25 bg-cream-200/60 px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <p className="font-golos text-xs tracking-[0.3em] uppercase text-gold mb-2">Нужен индивидуальный расчёт?</p>
+              <p className="font-cormorant text-2xl text-ink font-light leading-snug">
+                Подготовлю смету под&nbsp;вашу задачу после&nbsp;бесплатной консультации.
+              </p>
+            </div>
+            <a href="#contacts"
+              className="shrink-0 bg-ink text-cream-100 font-golos text-xs tracking-widest uppercase px-8 py-4 hover:bg-gold hover:text-ink transition-all duration-300 text-center">
+              Обсудить задачу
+            </a>
+          </div>
+
+          <p className="font-golos text-xs text-ink/40 italic text-center mt-8 max-w-2xl mx-auto leading-relaxed">
+            Цены ориентировочные, не&nbsp;являются публичной офертой. НДС не&nbsp;облагается
+            (применяется УСН). Услуги физическим лицам обсуждаются отдельно.
+          </p>
+        </div>
+      </section>
+
       {/* ─── CASES ─── */}
-      <section id="cases" className="py-24 bg-cream-100">
+      <section id="cases" className="py-24 bg-cream-200">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
             <div>
