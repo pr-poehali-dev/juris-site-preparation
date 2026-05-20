@@ -176,6 +176,9 @@ const NAV_LINKS = [
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCase, setActiveCase] = useState<number | null>(null);
+  const [agreeProcessing, setAgreeProcessing] = useState(false);
+  const [agreePolicy, setAgreePolicy] = useState(false);
+  const canSubmit = agreeProcessing && agreePolicy;
 
   return (
     <div className="min-h-screen bg-cream-100 font-golos">
@@ -595,13 +598,47 @@ export default function Index() {
                 <textarea rows={4} placeholder="Краткое описание вашего вопроса..."
                   className="w-full bg-cream-200 border border-gold/20 px-4 py-3 text-sm font-golos text-ink placeholder:text-ink/30 focus:outline-none focus:border-gold/60 transition-colors resize-none" />
               </div>
-              <button type="submit"
-                className="w-full bg-ink text-cream-100 font-golos text-xs tracking-widest uppercase py-4 hover:bg-gold hover:text-ink transition-all duration-300">
+              <label className="flex items-start gap-3 cursor-pointer select-none group">
+                <input
+                  type="checkbox"
+                  checked={agreeProcessing}
+                  onChange={(e) => setAgreeProcessing(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 accent-gold cursor-pointer shrink-0"
+                />
+                <span className="font-golos text-xs text-ink/60 leading-relaxed group-hover:text-ink transition-colors">
+                  Я&nbsp;согласен с&nbsp;обработкой моих персональных данных
+                </span>
+              </label>
+              <label className="flex items-start gap-3 cursor-pointer select-none group">
+                <input
+                  type="checkbox"
+                  checked={agreePolicy}
+                  onChange={(e) => setAgreePolicy(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 accent-gold cursor-pointer shrink-0"
+                />
+                <span className="font-golos text-xs text-ink/60 leading-relaxed group-hover:text-ink transition-colors">
+                  Ознакомлен с&nbsp;
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-gold/50 hover:text-gold transition-colors"
+                  >
+                    политикой персональных данных
+                  </a>
+                </span>
+              </label>
+              <button
+                type="submit"
+                disabled={!canSubmit}
+                className={`w-full font-golos text-xs tracking-widest uppercase py-4 transition-all duration-300 ${
+                  canSubmit
+                    ? "bg-ink text-cream-100 hover:bg-gold hover:text-ink cursor-pointer"
+                    : "bg-ink/20 text-ink/40 cursor-not-allowed"
+                }`}
+              >
                 Отправить заявку
               </button>
-              <p className="font-golos text-xs text-ink/30 text-center leading-relaxed">
-                Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных
-              </p>
             </form>
           </div>
         </div>
