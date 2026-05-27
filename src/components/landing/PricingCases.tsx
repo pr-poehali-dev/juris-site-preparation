@@ -29,31 +29,97 @@ export default function PricingCases() {
           </div>
 
           <div className="grid md:grid-cols-2 border-l border-t border-graphite-900/15">
-            {PRICING.map((p, idx) => (
-              <div key={p.title} className="reveal bg-paper-50 border-r border-b border-graphite-900/15 p-8 md:p-10 flex flex-col">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 border border-graphite-900 flex items-center justify-center bg-paper">
-                      <Icon name={p.icon} size={20} className="text-graphite-900" />
+            {PRICING.map((p, idx) => {
+              const hasSub = "subBlock" in p && p.subBlock;
+              return (
+                <div
+                  key={p.title}
+                  className={`reveal bg-paper-50 border-r border-b border-graphite-900/15 p-8 md:p-10 flex flex-col ${
+                    hasSub ? "md:col-span-2 md:bg-paper" : ""
+                  }`}
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 border border-graphite-900 flex items-center justify-center bg-paper">
+                        <Icon name={p.icon} size={20} className="text-graphite-900" />
+                      </div>
+                      <span className="font-golos text-xs text-graphite-400 tracking-widest">
+                        0{idx + 1} / 0{PRICING.length}
+                      </span>
                     </div>
-                    <span className="font-golos text-xs text-graphite-400 tracking-widest">
-                      0{idx + 1} / 0{PRICING.length}
-                    </span>
+                    {hasSub && <Tag variant="lime">2 в&nbsp;1</Tag>}
+                    {idx === 5 && <Tag variant="lime">Hot</Tag>}
                   </div>
-                  {idx === 5 && <Tag variant="lime">Hot</Tag>}
+                  <h3 className="font-cormorant text-3xl font-medium text-graphite-900 leading-tight">{p.title}</h3>
+                  <p className="font-golos text-sm text-graphite-500 leading-relaxed mt-3">{p.desc}</p>
+
+                  {hasSub ? (
+                    <div className="mt-6 grid md:grid-cols-2 gap-8">
+                      <ul className="divide-y divide-graphite-900/10">
+                        {p.items.map((item) => (
+                          <li key={item.name} className="flex items-baseline justify-between gap-4 py-3.5">
+                            <span className="font-golos text-sm text-graphite-800 leading-snug">{item.name}</span>
+                            <span className="font-cormorant text-lg text-graphite-900 whitespace-nowrap font-medium">{item.price}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="relative bg-graphite-900 text-paper-50 p-7 md:p-8 overflow-hidden">
+                        <div className="absolute inset-0 bg-grain opacity-15 pointer-events-none" />
+                        <div className="relative">
+                          <div className="flex items-center justify-between gap-3 mb-5">
+                            <div className="flex items-center gap-3">
+                              <div className="w-9 h-9 border border-lime flex items-center justify-center">
+                                <Icon name={p.subBlock!.icon} size={16} className="text-lime" />
+                              </div>
+                              <span className="font-golos text-[10px] uppercase tracking-[0.18em] text-lime">
+                                {p.subBlock!.tag}
+                              </span>
+                            </div>
+                            <span className="font-golos text-[10px] uppercase tracking-[0.18em] text-graphite-400">
+                              Цена иска · услуга
+                            </span>
+                          </div>
+
+                          <h4 className="font-cormorant text-2xl md:text-3xl font-light leading-tight">
+                            {p.subBlock!.title}
+                          </h4>
+                          <p className="font-golos text-xs text-graphite-300 mt-2">{p.subBlock!.hint}</p>
+
+                          <ul className="mt-5 divide-y divide-paper-50/10">
+                            {p.subBlock!.items.map((item, i) => (
+                              <li
+                                key={item.name}
+                                className="grid grid-cols-[auto_1fr_auto] items-baseline gap-3 py-2.5"
+                              >
+                                <span className="font-golos text-[10px] text-graphite-500 tabular-nums tracking-widest">
+                                  {String(i + 1).padStart(2, "0")}
+                                </span>
+                                <span className="font-golos text-[13px] text-paper-50/90 leading-snug">
+                                  {item.name}
+                                </span>
+                                <span className="font-cormorant text-lg text-lime whitespace-nowrap font-medium">
+                                  {item.price}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <ul className="mt-6 divide-y divide-graphite-900/10">
+                      {p.items.map((item) => (
+                        <li key={item.name} className="flex items-baseline justify-between gap-4 py-3.5">
+                          <span className="font-golos text-sm text-graphite-800 leading-snug">{item.name}</span>
+                          <span className="font-cormorant text-lg text-graphite-900 whitespace-nowrap font-medium">{item.price}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <h3 className="font-cormorant text-3xl font-medium text-graphite-900 leading-tight">{p.title}</h3>
-                <p className="font-golos text-sm text-graphite-500 leading-relaxed mt-3">{p.desc}</p>
-                <ul className="mt-6 divide-y divide-graphite-900/10">
-                  {p.items.map((item) => (
-                    <li key={item.name} className="flex items-baseline justify-between gap-4 py-3.5">
-                      <span className="font-golos text-sm text-graphite-800 leading-snug">{item.name}</span>
-                      <span className="font-cormorant text-lg text-graphite-900 whitespace-nowrap font-medium">{item.price}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="reveal mt-12 bg-graphite-900 text-paper-50 px-8 md:px-12 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 relative overflow-hidden">
