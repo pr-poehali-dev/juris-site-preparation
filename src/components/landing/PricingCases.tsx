@@ -30,7 +30,7 @@ export default function PricingCases() {
 
           <div className="grid md:grid-cols-2 border-l border-t border-graphite-900/15">
             {PRICING.map((p, idx) => {
-              const hasSub = "subBlock" in p && p.subBlock;
+              const subBlocks = "subBlocks" in p ? p.subBlocks : undefined;
               return (
                 <div
                   key={p.title}
@@ -59,48 +59,55 @@ export default function PricingCases() {
                     ))}
                   </ul>
 
-                  {hasSub && (
-                    <details className="group mt-6 border-t border-graphite-900/15 pt-6">
-                      <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
-                        <div className="flex items-center gap-3">
-                          <Icon name={p.subBlock!.icon} size={16} className="text-graphite-700" />
-                          <div>
-                            <p className="font-cormorant text-xl text-graphite-900 leading-tight">
-                              {p.subBlock!.title}
-                            </p>
-                            <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-graphite-400 mt-1">
-                              {p.subBlock!.tag} · показать тарифную сетку
-                            </p>
-                          </div>
-                        </div>
-                        <Icon
-                          name="Plus"
-                          size={16}
-                          className="text-graphite-700 shrink-0 transition-transform duration-300 group-open:rotate-45"
-                        />
-                      </summary>
+                  {subBlocks && (
+                    <div className="mt-6 border-t border-graphite-900/15 pt-2">
+                      {subBlocks.map((sb) => (
+                        <details
+                          key={sb.title}
+                          className="group border-b border-graphite-900/10 last:border-b-0 py-4"
+                        >
+                          <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
+                            <div className="flex items-center gap-3">
+                              <Icon name={sb.icon} size={16} className="text-graphite-700" />
+                              <div>
+                                <p className="font-cormorant text-xl text-graphite-900 leading-tight">
+                                  {sb.title}
+                                </p>
+                                <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-graphite-400 mt-1">
+                                  {sb.tag} · показать тарифную сетку
+                                </p>
+                              </div>
+                            </div>
+                            <Icon
+                              name="Plus"
+                              size={16}
+                              className="text-graphite-700 shrink-0 transition-transform duration-300 group-open:rotate-45"
+                            />
+                          </summary>
 
-                      <div className="mt-5 animate-in fade-in slide-in-from-top-1 duration-300">
-                        <p className="font-golos text-xs text-graphite-500 italic leading-relaxed mb-4">
-                          {p.subBlock!.hint}
-                        </p>
-                        <ul className="divide-y divide-graphite-900/10 border-t border-b border-graphite-900/10">
-                          {p.subBlock!.items.map((item) => (
-                            <li
-                              key={item.name}
-                              className="flex items-baseline justify-between gap-4 py-2.5"
-                            >
-                              <span className="font-golos text-[13px] text-graphite-700 leading-snug">
-                                {item.name}
-                              </span>
-                              <span className="font-cormorant text-base text-graphite-900 whitespace-nowrap font-medium tabular-nums">
-                                {item.price}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </details>
+                          <div className="mt-5 animate-in fade-in slide-in-from-top-1 duration-300">
+                            <p className="font-golos text-xs text-graphite-500 italic leading-relaxed mb-4">
+                              {sb.hint}
+                            </p>
+                            <ul className="divide-y divide-graphite-900/10 border-t border-b border-graphite-900/10">
+                              {sb.items.map((item) => (
+                                <li
+                                  key={item.name}
+                                  className="flex items-baseline justify-between gap-4 py-2.5"
+                                >
+                                  <span className="font-golos text-[13px] text-graphite-700 leading-snug">
+                                    {item.name}
+                                  </span>
+                                  <span className="font-cormorant text-base text-graphite-900 whitespace-nowrap font-medium tabular-nums">
+                                    {item.price}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </details>
+                      ))}
+                    </div>
                   )}
                 </div>
               );
