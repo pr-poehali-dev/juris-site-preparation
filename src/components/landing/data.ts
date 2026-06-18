@@ -1,4 +1,4 @@
-export const LAWYER_PHOTO = "https://cdn.poehali.dev/projects/e5492d44-434b-4106-a0da-3a1358d8bacc/files/2dcf0fce-7236-4025-b75f-865e4275a6f0.jpg";
+export const LAWYER_PHOTO = "https://cdn.poehali.dev/projects/e5492d44-434b-4106-a0da-3a1358d8bacc/bucket/2a636afb-4819-457e-bb23-b4ddf785f6f4.jpg";
 
 export const SERVICES = [
   {
