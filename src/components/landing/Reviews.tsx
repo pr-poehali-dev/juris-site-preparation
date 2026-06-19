@@ -1,5 +1,4 @@
 import Icon from "@/components/ui/icon";
-import { CLIENTS, REVIEWS } from "./data";
 import Tag from "./Tag";
 
 export default function Reviews() {
@@ -39,58 +38,6 @@ export default function Reviews() {
                 {s.label}
               </p>
             </div>
-          ))}
-        </div>
-
-        {/* Client logos / names */}
-        <div className="reveal mb-20">
-          <p className="font-golos text-[11px] uppercase tracking-[0.2em] text-graphite-400 mb-6">
-            ↳ Среди клиентов
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t border-graphite-900/15">
-            {CLIENTS.map((c) => (
-              <div
-                key={c.name}
-                className="group border-r border-b border-graphite-900/15 px-5 py-7 bg-paper-50 hover:bg-lime transition-all duration-500 flex flex-col items-start justify-between min-h-[110px]"
-              >
-                <span className="font-golos text-[10px] uppercase tracking-[0.18em] text-graphite-400 group-hover:text-graphite-900">
-                  {c.industry}
-                </span>
-                <p className="font-cormorant text-2xl md:text-3xl font-medium text-graphite-900 leading-tight mt-3">
-                  {c.name}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Reviews grid */}
-        <div className="grid md:grid-cols-2 gap-5">
-          {REVIEWS.map((r, i) => (
-            <article
-              key={r.name}
-              className={`reveal d${(i % 4) + 1} bg-paper-50 border border-graphite-900/15 p-8 md:p-10 flex flex-col hover:border-graphite-900 transition-colors duration-300`}
-            >
-              <div className="flex items-start justify-between mb-6">
-                <Icon name="Quote" size={28} className="text-lime" />
-                <div className="flex items-center gap-0.5">
-                  {Array.from({ length: r.rating }).map((_, idx) => (
-                    <Icon key={idx} name="Star" size={14} className="text-graphite-900 fill-graphite-900" />
-                  ))}
-                </div>
-              </div>
-              <p className="font-cormorant text-xl md:text-2xl text-graphite-900 leading-snug italic font-light flex-1">
-                «{r.text}»
-              </p>
-              <div className="mt-8 pt-6 border-t border-graphite-900/15 flex items-end justify-between gap-4">
-                <div>
-                  <p className="font-golos text-sm font-semibold text-graphite-900">{r.name}</p>
-                  <p className="font-golos text-xs text-graphite-500 mt-1">{r.role}</p>
-                  <p className="font-golos text-xs text-graphite-700 mt-0.5">{r.company}</p>
-                </div>
-                <Tag variant="outline">{r.tag}</Tag>
-              </div>
-            </article>
           ))}
         </div>
 

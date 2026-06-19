@@ -78,19 +78,6 @@ export default function AboutServices() {
                 решения суда.
               </p>
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4">
-              {[
-                { icon: "GraduationCap", text: "МГУ, юридический факультет" },
-                { icon: "Award", text: "Адвокатская палата" },
-                { icon: "MapPin", text: "Москва · вся Россия" },
-                { icon: "Languages", text: "Русский · английский" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-start gap-3 border-t border-graphite-900/15 pt-3">
-                  <Icon name={item.icon} size={16} className="text-graphite-900 mt-0.5 shrink-0" />
-                  <span className="font-golos text-sm text-graphite-700">{item.text}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
