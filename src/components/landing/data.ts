@@ -239,7 +239,7 @@ export const PRICING = [
 
 export const NAV_LINKS = [
   { label: "Главная", href: "#hero" },
-  { label: "О мне", href: "#about" },
+  { label: "Обо мне", href: "#about" },
   { label: "Услуги", href: "#services" },
   { label: "Прайс", href: "#pricing" },
   { label: "Кейсы", href: "#cases" },
