@@ -63,7 +63,7 @@ export default function AboutServices() {
               <Tag variant="outline">Independent</Tag>
             </div>
             <h2 className="font-cormorant text-5xl md:text-6xl text-graphite-900 leading-[0.95] tracking-tight">
-              Бутиковая практика<br />
+              Практика<br />
               <span className="italic">с&nbsp;вниманием</span> к&nbsp;деталям
             </h2>
             <div className="mt-8 space-y-5 text-graphite-700 text-base leading-relaxed font-golos max-w-xl">
