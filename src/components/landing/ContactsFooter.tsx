@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { NAV_LINKS } from "./data";
 import Tag from "./Tag";
@@ -55,7 +56,6 @@ export default function ContactsFooter() {
               {[
                 { icon: "Phone", label: "Телефон", value: "+7 (999) 000-00-00" },
                 { icon: "Mail", label: "Электронная почта", value: "info@example.ru" },
-                { icon: "MapPin", label: "Адрес", value: "Москва, ул. Примерная, д.1, оф.100" },
                 { icon: "Clock", label: "Часы работы", value: "Пн–Пт: 09:00 — 19:00" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4 border-t border-graphite-900/15 pt-4">
@@ -116,14 +116,15 @@ export default function ContactsFooter() {
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     Ознакомлен с&nbsp;
-                    <a
-                      href="/privacy"
+                    <Link
+                      to="/privacy"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="underline underline-offset-2 hover:text-graphite-900 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      политикой персональных данных
-                    </a>
+                      политикой обработки персональных данных
+                    </Link>
                   </span>
                 </label>
                 <button
@@ -163,7 +164,15 @@ export default function ContactsFooter() {
                 </a>
               ))}
             </nav>
-            <p className="font-golos text-xs text-graphite-400">© 2026 ИП Закарьяева П.</p>
+            <div className="flex flex-col md:items-end gap-1.5">
+              <Link
+                to="/privacy"
+                className="font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors"
+              >
+                Политика обработки персональных данных
+              </Link>
+              <p className="font-golos text-xs text-graphite-400">© 2026 ИП Закарьяева П.</p>
+            </div>
           </div>
         </div>
       </footer>
