@@ -265,10 +265,10 @@ export default function Privacy() {
               Пользователь направляет соответствующий запрос Оператору на&nbsp;адрес электронной
               почты:{" "}
               <a
-                href="mailto:info@example.ru"
+                href="mailto:pzakaryaeva25@gmail.com"
                 className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
               >
-                info@example.ru
+                pzakaryaeva25@gmail.com
               </a>
               . Запрос рассматривается в&nbsp;сроки, установленные законодательством РФ.
             </p>
@@ -302,10 +302,10 @@ export default function Privacy() {
               12.3. По&nbsp;всем вопросам, связанным с&nbsp;обработкой персональных данных, можно
               обратиться к&nbsp;Оператору по&nbsp;адресу:{" "}
               <a
-                href="mailto:info@example.ru"
+                href="mailto:pzakaryaeva25@gmail.com"
                 className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
               >
-                info@example.ru
+                pzakaryaeva25@gmail.com
               </a>
               .
             </p>

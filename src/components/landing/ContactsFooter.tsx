@@ -54,8 +54,8 @@ export default function ContactsFooter() {
             </p>
             <div className="mt-10 space-y-3">
               {[
-                { icon: "Phone", label: "Телефон", value: "+7 (999) 000-00-00" },
-                { icon: "Mail", label: "Электронная почта", value: "info@example.ru" },
+                { icon: "Phone", label: "Телефон", value: "+7 (926) 065-85-95" },
+                { icon: "Mail", label: "Электронная почта", value: "pzakaryaeva25@gmail.com" },
                 { icon: "Clock", label: "Часы работы", value: "Пн–Пт: 09:00 — 19:00" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4 border-t border-graphite-900/15 pt-4">
