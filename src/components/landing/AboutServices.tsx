@@ -2,42 +2,9 @@ import Icon from "@/components/ui/icon";
 import { SERVICES } from "./data";
 import Tag from "./Tag";
 
-const STATS = [
-  { num: "200+", label: "выигранных дел", note: "С 2014 года" },
-  { num: "10+", label: "лет практики", note: "Lead Lawyer" },
-  { num: "98%", label: "клиентов рекомендуют", note: "NPS-индекс" },
-  { num: "×3", label: "средний возврат к гонорару", note: "ROI клиента" },
-];
-
 export default function AboutServices() {
   return (
     <>
-      {/* ─── STATS BAR ─── */}
-      <section className="bg-graphite-900 text-paper-50 py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grain opacity-20 pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="reveal flex flex-wrap items-center gap-2 mb-12">
-            <Tag variant="lime">Цифры</Tag>
-            <span className="font-golos text-xs uppercase tracking-[0.2em] text-graphite-400">
-              Результат, измеримый в&nbsp;деньгах и&nbsp;решениях
-            </span>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
-            {STATS.map((s, i) => (
-              <div key={s.label} className={`reveal d${(i % 4) + 1} border-t border-paper-50/20 pt-6`}>
-                <p className="font-cormorant text-metric font-light text-paper-50">
-                  {s.num}
-                </p>
-                <p className="font-golos text-sm text-paper-50 mt-3 leading-snug">{s.label}</p>
-                <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-graphite-400 mt-2">
-                  {s.note}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── ABOUT ─── */}
       <section id="about" className="py-24 md:py-32 bg-paper">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 md:gap-16 items-start">
