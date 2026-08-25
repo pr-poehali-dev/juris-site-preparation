@@ -242,7 +242,6 @@ export const NAV_LINKS = [
   { label: "Услуги", href: "#services" },
   { label: "Прайс", href: "#pricing" },
   { label: "Кейсы", href: "#cases" },
-  { label: "Отзывы", href: "#reviews" },
   { label: "Контакты", href: "#contacts" },
 ];
 
