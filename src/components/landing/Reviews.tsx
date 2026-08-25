@@ -40,26 +40,6 @@ export default function Reviews() {
             </div>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="reveal mt-16 flex flex-col md:flex-row items-center justify-between gap-6 bg-graphite-900 text-paper-50 px-8 md:px-12 py-10 relative overflow-hidden">
-          <div className="absolute inset-0 bg-grain opacity-20 pointer-events-none" />
-          <div className="relative">
-            <p className="font-cormorant text-2xl md:text-3xl font-light leading-tight">
-              Хотите оставить отзыв или&nbsp;<span className="italic">проверить рекомендации</span>?
-            </p>
-            <p className="font-golos text-sm text-graphite-300 mt-2">
-              Соединю с&nbsp;действующими клиентами по&nbsp;запросу.
-            </p>
-          </div>
-          <a
-            href="#contacts"
-            className="relative shrink-0 inline-flex items-center gap-2 bg-lime text-graphite-900 font-golos text-sm font-medium px-7 py-4 hover:bg-paper-50 transition-all duration-300"
-          >
-            Связаться
-            <Icon name="ArrowUpRight" size={16} />
-          </a>
-        </div>
       </div>
     </section>
   );
