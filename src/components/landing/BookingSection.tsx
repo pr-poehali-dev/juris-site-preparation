@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 import { toast } from "sonner";
@@ -19,6 +19,9 @@ export default function BookingSection() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [agreeProcessing, setAgreeProcessing] = useState(false);
+  const [agreePolicy, setAgreePolicy] = useState(false);
+  const [agreeNewsletter, setAgreeNewsletter] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   const fetchSlots = useCallback(async (d: Date) => {
@@ -41,7 +44,8 @@ export default function BookingSection() {
     if (date) fetchSlots(date);
   }, [date, fetchSlots]);
 
-  const canSubmit = date && time && name.trim() && phone.trim() && !submitting;
+  const canSubmit =
+    date && time && name.trim() && phone.trim() && agreeProcessing && agreePolicy && !submitting;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +76,9 @@ export default function BookingSection() {
       setEmail("");
       setMessage("");
       setTime(null);
+      setAgreeProcessing(false);
+      setAgreePolicy(false);
+      setAgreeNewsletter(false);
       navigate("/thank-you");
     } catch {
       toast.error("Не удалось записаться. Попробуйте ещё раз.");
@@ -195,6 +202,66 @@ export default function BookingSection() {
                     </p>
                   </div>
                 )}
+
+                <label className="flex items-start gap-3 cursor-pointer select-none group pt-2">
+                  <input
+                    type="checkbox"
+                    checked={agreeProcessing}
+                    onChange={(e) => setAgreeProcessing(e.target.checked)}
+                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                  />
+                  <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
+                    Я&nbsp;согласен с&nbsp;
+                    <Link
+                      to="/pd-consent"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-graphite-900 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      обработкой моих персональных данных
+                    </Link>
+                  </span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer select-none group">
+                  <input
+                    type="checkbox"
+                    checked={agreePolicy}
+                    onChange={(e) => setAgreePolicy(e.target.checked)}
+                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                  />
+                  <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
+                    Ознакомлен с&nbsp;
+                    <Link
+                      to="/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-graphite-900 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      политикой обработки персональных данных
+                    </Link>
+                  </span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer select-none group">
+                  <input
+                    type="checkbox"
+                    checked={agreeNewsletter}
+                    onChange={(e) => setAgreeNewsletter(e.target.checked)}
+                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                  />
+                  <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
+                    <Link
+                      to="/newsletter-consent"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-graphite-900 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Даю согласие на&nbsp;получение информационной и&nbsp;рекламной рассылки
+                    </Link>
+                  </span>
+                </label>
 
                 <button
                   type="submit"
