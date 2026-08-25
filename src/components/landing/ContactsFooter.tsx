@@ -136,7 +136,15 @@ export default function ContactsFooter() {
                     className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
-                    Даю согласие на&nbsp;получение информационной и&nbsp;рекламной рассылки
+                    <Link
+                      to="/newsletter-consent"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-graphite-900 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Даю согласие на&nbsp;получение информационной и&nbsp;рекламной рассылки
+                    </Link>
                   </span>
                 </label>
                 <button
