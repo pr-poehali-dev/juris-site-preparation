@@ -1,14 +1,46 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+import { toast } from "sonner";
 import { NAV_LINKS } from "./data";
 import Tag from "./Tag";
 
+const CONTACT_FORM_URL = "https://functions.poehali.dev/2603bfd9-fcf5-4d58-8692-d9eb44e4e7da";
+
 export default function ContactsFooter() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [agreeProcessing, setAgreeProcessing] = useState(false);
   const [agreePolicy, setAgreePolicy] = useState(false);
   const [agreeNewsletter, setAgreeNewsletter] = useState(false);
-  const canSubmit = agreeProcessing && agreePolicy;
+  const [submitting, setSubmitting] = useState(false);
+  const canSubmit = agreeProcessing && agreePolicy && !submitting;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!canSubmit) return;
+    setSubmitting(true);
+    try {
+      const res = await fetch(CONTACT_FORM_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message }),
+      });
+      if (!res.ok) throw new Error("request failed");
+      toast.success("Заявка отправлена! Перезвоню в течение часа.");
+      setName("");
+      setPhone("");
+      setMessage("");
+      setAgreeProcessing(false);
+      setAgreePolicy(false);
+      setAgreeNewsletter(false);
+    } catch {
+      toast.error("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -81,20 +113,26 @@ export default function ContactsFooter() {
                 </div>
                 <Tag variant="lime">Free</Tag>
               </div>
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
                   <label className="font-golos text-[11px] text-graphite-500 uppercase tracking-[0.15em] block mb-2">Имя</label>
-                  <input type="text" placeholder="Иван Петров"
+                  <input type="text" placeholder="Иван Петров" required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="w-full bg-transparent border-0 border-b border-graphite-900/30 px-0 py-3 text-base font-golos text-graphite-900 placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900 transition-colors" />
                 </div>
                 <div>
                   <label className="font-golos text-[11px] text-graphite-500 uppercase tracking-[0.15em] block mb-2">Телефон</label>
-                  <input type="tel" placeholder="+7 (___) ___-__-__"
+                  <input type="tel" placeholder="+7 (___) ___-__-__" required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     className="w-full bg-transparent border-0 border-b border-graphite-900/30 px-0 py-3 text-base font-golos text-graphite-900 placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900 transition-colors" />
                 </div>
                 <div>
                   <label className="font-golos text-[11px] text-graphite-500 uppercase tracking-[0.15em] block mb-2">Опишите ситуацию</label>
                   <textarea rows={4} placeholder="Краткое описание вашего вопроса..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className="w-full bg-transparent border-0 border-b border-graphite-900/30 px-0 py-3 text-base font-golos text-graphite-900 placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900 transition-colors resize-none" />
                 </div>
                 <label className="flex items-start gap-3 cursor-pointer select-none group pt-2">
@@ -158,15 +196,15 @@ export default function ContactsFooter() {
                 </label>
                 <button
                   type="submit"
-                  disabled={!canSubmit}
+                  disabled={!agreeProcessing || !agreePolicy || submitting}
                   className={`w-full inline-flex items-center justify-center gap-2 font-golos text-sm tracking-widest uppercase font-semibold py-5 transition-all duration-300 ${
-                    canSubmit
+                    agreeProcessing && agreePolicy && !submitting
                       ? "bg-graphite-900 text-paper-50 hover:bg-lime hover:text-graphite-900 cursor-pointer"
                       : "bg-graphite-900/15 text-graphite-400 cursor-not-allowed"
                   }`}
                 >
-                  Отправить заявку
-                  {canSubmit && <Icon name="ArrowUpRight" size={16} />}
+                  {submitting ? "Отправляем..." : "Отправить заявку"}
+                  {agreeProcessing && agreePolicy && !submitting && <Icon name="ArrowUpRight" size={16} />}
                 </button>
               </form>
             </div>
