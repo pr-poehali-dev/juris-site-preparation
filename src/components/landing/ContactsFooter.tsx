@@ -7,6 +7,7 @@ import Tag from "./Tag";
 export default function ContactsFooter() {
   const [agreeProcessing, setAgreeProcessing] = useState(false);
   const [agreePolicy, setAgreePolicy] = useState(false);
+  const [agreeNewsletter, setAgreeNewsletter] = useState(false);
   const canSubmit = agreeProcessing && agreePolicy;
 
   return (
@@ -125,6 +126,17 @@ export default function ContactsFooter() {
                     >
                       политикой обработки персональных данных
                     </Link>
+                  </span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer select-none group">
+                  <input
+                    type="checkbox"
+                    checked={agreeNewsletter}
+                    onChange={(e) => setAgreeNewsletter(e.target.checked)}
+                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                  />
+                  <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
+                    Даю согласие на&nbsp;получение информационной и&nbsp;рекламной рассылки
                   </span>
                 </label>
                 <button
