@@ -271,6 +271,16 @@ export default function Privacy() {
               </a>
               . Запрос рассматривается в&nbsp;сроки, установленные законодательством РФ.
             </p>
+            <p>
+              10.3. Для&nbsp;отзыва согласия Пользователь может воспользоваться формой заявления:{" "}
+              <Link
+                to="/revoke-consent"
+                className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
+              >
+                заявление об&nbsp;отзыве согласия на&nbsp;обработку персональных данных
+              </Link>
+              .
+            </p>
           </section>
 
           <section>
