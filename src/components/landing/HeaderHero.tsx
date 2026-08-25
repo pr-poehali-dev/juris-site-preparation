@@ -80,7 +80,7 @@ export default function HeaderHero() {
             <div className="md:col-span-7">
               <p className="font-golos text-base md:text-lg text-graphite-700 leading-relaxed max-w-xl">
                 Юридическая практика, говорящая с&nbsp;бизнесом на&nbsp;одном языке.
-                Более&nbsp;10 лет защищаю интересы компаний и&nbsp;предпринимателей
+                Защищаю интересы компаний и&nbsp;предпринимателей
                 в&nbsp;арбитражах, переговорах и&nbsp;структурировании сделок.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
