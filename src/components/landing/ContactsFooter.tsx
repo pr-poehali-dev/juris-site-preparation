@@ -105,7 +105,16 @@ export default function ContactsFooter() {
                     className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
-                    Я&nbsp;согласен с&nbsp;обработкой моих персональных данных
+                    Я&nbsp;согласен с&nbsp;
+                    <Link
+                      to="/pd-consent"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-graphite-900 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      обработкой моих персональных данных
+                    </Link>
                   </span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer select-none group">
