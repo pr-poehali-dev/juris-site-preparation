@@ -63,10 +63,6 @@ export default function AboutServices() {
                 <span className="italic">для&nbsp;бизнеса</span>
               </h2>
             </div>
-            <p className="font-golos text-sm text-graphite-500 max-w-xs leading-relaxed">
-              Полный цикл сопровождения — от&nbsp;стартапа до&nbsp;холдинга. Каждое направление
-              ведёт&nbsp;Lead Lawyer без посредников.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 border-l border-t border-graphite-900/15">
