@@ -4,9 +4,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+import psycopg2
+
 
 def handler(event: dict, context) -> dict:
-    """Принимает заявку с формы обратной связи сайта и отправляет её на email владельца через SMTP (Gmail)"""
+    """Принимает заявку с формы обратной связи сайта, сохраняет её в базу данных и отправляет на email владельца через SMTP (Gmail)"""
     method = event.get('httpMethod', 'GET')
 
     if method == 'OPTIONS':
@@ -41,6 +43,19 @@ def handler(event: dict, context) -> dict:
             'headers': headers,
             'body': json.dumps({'error': 'Укажите имя и телефон'})
         }
+
+    dsn = os.environ.get('DATABASE_URL', '')
+    if dsn:
+        conn = psycopg2.connect(dsn)
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "INSERT INTO contact_requests (name, phone, message) VALUES (%s, %s, %s)",
+                    (name, phone, message or None)
+                )
+            conn.commit()
+        finally:
+            conn.close()
 
     sender_email = 'zakaraevapatimat6@gmail.com'
     receiver_email = 'zakaraevapatimat6@gmail.com'
