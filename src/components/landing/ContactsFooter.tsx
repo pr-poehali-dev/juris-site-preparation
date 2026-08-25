@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { toast } from "sonner";
 import { NAV_LINKS } from "./data";
@@ -8,6 +8,7 @@ import Tag from "./Tag";
 const CONTACT_FORM_URL = "https://functions.poehali.dev/2603bfd9-fcf5-4d58-8692-d9eb44e4e7da";
 
 export default function ContactsFooter() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -28,13 +29,13 @@ export default function ContactsFooter() {
         body: JSON.stringify({ name, phone, message }),
       });
       if (!res.ok) throw new Error("request failed");
-      toast.success("Заявка отправлена! Перезвоню в течение часа.");
       setName("");
       setPhone("");
       setMessage("");
       setAgreeProcessing(false);
       setAgreePolicy(false);
       setAgreeNewsletter(false);
+      navigate("/thank-you");
     } catch {
       toast.error("Не удалось отправить заявку. Попробуйте ещё раз.");
     } finally {

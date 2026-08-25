@@ -9,6 +9,7 @@ import Privacy from "./pages/Privacy";
 import NewsletterConsent from "./pages/NewsletterConsent";
 import RevokeConsent from "./pages/RevokeConsent";
 import PdConsent from "./pages/PdConsent";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/newsletter-consent" element={<NewsletterConsent />} />
           <Route path="/revoke-consent" element={<RevokeConsent />} />
           <Route path="/pd-consent" element={<PdConsent />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
