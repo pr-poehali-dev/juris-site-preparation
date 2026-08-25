@@ -17,6 +17,7 @@ export default function BookingSection() {
   const [time, setTime] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -53,9 +54,11 @@ export default function BookingSection() {
         body: JSON.stringify({
           name,
           phone,
+          email,
           message,
           date: format(date, "yyyy-MM-dd"),
           time,
+          origin: window.location.origin,
         }),
       });
       if (res.status === 409) {
@@ -66,6 +69,7 @@ export default function BookingSection() {
       if (!res.ok) throw new Error("request failed");
       setName("");
       setPhone("");
+      setEmail("");
       setMessage("");
       setTime(null);
       navigate("/thank-you");
@@ -164,6 +168,15 @@ export default function BookingSection() {
                   <input type="tel" placeholder="+7 (___) ___-__-__" required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    className="w-full bg-transparent border-0 border-b border-graphite-900/30 px-0 py-3 text-base font-golos text-graphite-900 placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900 transition-colors" />
+                </div>
+                <div>
+                  <label className="font-golos text-[11px] text-graphite-500 uppercase tracking-[0.15em] block mb-2">
+                    Email <span className="normal-case text-graphite-400">(для отмены/переноса записи)</span>
+                  </label>
+                  <input type="email" placeholder="ivan@mail.ru"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full bg-transparent border-0 border-b border-graphite-900/30 px-0 py-3 text-base font-golos text-graphite-900 placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900 transition-colors" />
                 </div>
                 <div>
