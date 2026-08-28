@@ -63,7 +63,7 @@ export default function ContactsFooter() {
             Разберём вашу ситуацию, определим стратегию и&nbsp;оценим перспективы уже
             при&nbsp;первой встрече. Без воды, без скрытых платежей.
           </p>
-          <a href="#contacts"
+          <a href="#booking"
             className="reveal d4 inline-flex items-center gap-3 bg-lime text-graphite-900 font-golos text-sm font-semibold uppercase tracking-widest px-9 py-5 hover:bg-paper-50 transition-all duration-300">
             Записаться на консультацию
             <Icon name="ArrowUpRight" size={18} />
