@@ -89,6 +89,11 @@ export default function PricingCases() {
                             <p className="font-golos text-xs text-graphite-500 italic leading-relaxed mb-4">
                               {sb.hint}
                             </p>
+                            {"itemsLabel" in sb && sb.itemsLabel && (
+                              <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-graphite-500 mb-2">
+                                {sb.itemsLabel}
+                              </p>
+                            )}
                             <ul className="divide-y divide-graphite-900/10 border-t border-b border-graphite-900/10">
                               {sb.items.map((item) => (
                                 <li
