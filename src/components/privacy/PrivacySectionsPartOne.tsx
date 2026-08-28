@@ -2,7 +2,7 @@ export default function PrivacySectionsPartOne() {
   return (
     <>
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">1. Общие положения</h2>
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">1. Общие положения</h2>
         <p>
           1.1. Настоящая Политика обработки персональных данных (далее — «Политика») разработана
           в&nbsp;соответствии с&nbsp;частью&nbsp;2 статьи&nbsp;18.1 Федерального закона
@@ -23,7 +23,7 @@ export default function PrivacySectionsPartOne() {
             данных:{" "}
             <a
               href="mailto:zakaraevapatimat6@gmail.com"
-              className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
+              className="text-graphite-900 underline underline-offset-2 hover:text-sky transition-colors"
             >
               zakaraevapatimat6@gmail.com
             </a>
@@ -70,7 +70,7 @@ export default function PrivacySectionsPartOne() {
       </section>
 
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           2. Цели обработки персональных данных
         </h2>
         <p>
@@ -119,7 +119,7 @@ export default function PrivacySectionsPartOne() {
       </section>
 
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           3. Правовые основания обработки персональных данных
         </h2>
         <p>3.1. Правовыми основаниями обработки персональных данных являются:</p>
@@ -156,7 +156,7 @@ export default function PrivacySectionsPartOne() {
       </section>
 
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           4. Объём и&nbsp;категории обрабатываемых персональных данных, категории субъектов
           персональных данных
         </h2>

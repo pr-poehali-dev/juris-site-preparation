@@ -8,7 +8,7 @@ export default function RevokeConsent() {
         <div className="max-w-3xl mx-auto px-6 flex items-center justify-between gap-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors"
+            className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-sky transition-colors"
           >
             <Icon name="ArrowLeft" size={16} />
             На главную
@@ -17,7 +17,7 @@ export default function RevokeConsent() {
       </header>
 
       <article className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-        <h1 className="font-cormorant text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
+        <h1 className="font-display uppercase text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
           Заявление об отзыве согласия на обработку персональных данных
         </h1>
         <p className="font-golos text-sm text-graphite-500 mt-4 leading-relaxed">
@@ -40,7 +40,7 @@ export default function RevokeConsent() {
             тел./e-mail: _______________________________
           </p>
 
-          <h2 className="font-cormorant text-2xl text-graphite-900 text-center pt-4">
+          <h2 className="font-display uppercase text-2xl text-graphite-900 text-center pt-4">
             ЗАЯВЛЕНИЕ<br />
             <span className="text-lg">об отзыве согласия на обработку персональных данных</span>
           </h2>
@@ -75,7 +75,7 @@ export default function RevokeConsent() {
             Заполненное заявление направьте на электронную почту:{" "}
             <a
               href="mailto:zakaraevapatimat6@gmail.com"
-              className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
+              className="text-graphite-900 underline underline-offset-2 hover:text-sky transition-colors"
             >
               zakaraevapatimat6@gmail.com
             </a>
@@ -85,7 +85,7 @@ export default function RevokeConsent() {
         <div className="mt-6 pt-8 border-t border-graphite-900/15">
           <Link
             to="/privacy"
-            className="inline-flex items-center gap-2 font-golos text-sm uppercase tracking-[0.15em] text-graphite-900 hover:text-lime transition-colors"
+            className="inline-flex items-center gap-2 font-golos text-sm uppercase tracking-[0.15em] text-graphite-900 hover:text-sky transition-colors"
           >
             <Icon name="ArrowLeft" size={16} />
             К политике обработки персональных данных

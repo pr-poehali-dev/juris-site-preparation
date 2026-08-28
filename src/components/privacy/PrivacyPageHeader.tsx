@@ -11,7 +11,7 @@ export default function PrivacyPageHeader({ updated }: PrivacyPageHeaderProps) {
       <div className="max-w-3xl mx-auto px-6 flex items-center justify-between gap-4">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors"
+          className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-sky transition-colors"
         >
           <Icon name="ArrowLeft" size={16} />
           На главную

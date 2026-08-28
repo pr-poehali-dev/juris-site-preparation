@@ -13,7 +13,7 @@ export default function Privacy() {
       <PrivacyPageHeader updated={UPDATED} />
 
       <article className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-        <h1 className="font-cormorant text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
+        <h1 className="font-display uppercase text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
           Политика обработки персональных данных
         </h1>
 
@@ -26,7 +26,7 @@ export default function Privacy() {
         <div className="mt-16 pt-8 border-t border-graphite-900/15">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-golos text-sm uppercase tracking-[0.15em] text-graphite-900 hover:text-lime transition-colors"
+            className="inline-flex items-center gap-2 font-golos text-sm uppercase tracking-[0.15em] text-graphite-900 hover:text-sky transition-colors"
           >
             <Icon name="ArrowLeft" size={16} />
             Вернуться на главную

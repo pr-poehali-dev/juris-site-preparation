@@ -93,12 +93,12 @@ export default function BookingSection() {
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
             <div className="flex items-center gap-2 mb-5">
-              <Tag>Запись</Tag>
-              <Tag variant="lime">Онлайн</Tag>
+              <Tag variant="bordo">Запись</Tag>
+              <Tag variant="sky">Онлайн</Tag>
             </div>
-            <h2 className="font-cormorant text-5xl md:text-6xl text-graphite-900 leading-[0.95] tracking-tight">
+            <h2 className="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-graphite-900 leading-[0.95] font-bold">
               Записаться<br />
-              <span className="italic">на консультацию</span>
+              <span className="text-bordo">на консультацию</span>
             </h2>
           </div>
           <p className="font-golos text-sm text-graphite-500 max-w-xs leading-relaxed">
@@ -107,7 +107,7 @@ export default function BookingSection() {
         </div>
 
         <div className="reveal d2 grid md:grid-cols-12 gap-8 md:gap-10">
-          <div className="md:col-span-6 bg-paper-50 border border-graphite-900 p-6 md:p-8">
+          <div className="md:col-span-6 bg-paper-50 border border-graphite-900/20 p-6 md:p-8">
             <p className="font-golos text-[11px] text-graphite-500 uppercase tracking-[0.15em] mb-4">
               1. Выберите дату
             </p>
@@ -142,10 +142,10 @@ export default function BookingSection() {
                         key={s}
                         type="button"
                         onClick={() => setTime(s)}
-                        className={`font-golos text-sm py-2.5 border transition-colors ${
+                        className={`font-golos text-sm font-semibold py-2.5 border transition-colors ${
                           time === s
-                            ? "bg-graphite-900 text-paper-50 border-graphite-900"
-                            : "bg-transparent text-graphite-900 border-graphite-900/30 hover:border-graphite-900"
+                            ? "bg-bordo text-white border-bordo"
+                            : "bg-transparent text-graphite-900 border-graphite-900/25 hover:border-bordo hover:text-bordo"
                         }`}
                       >
                         {s}
@@ -158,7 +158,7 @@ export default function BookingSection() {
           </div>
 
           <div className="md:col-span-6">
-            <div className="bg-paper-50 border border-graphite-900 p-6 md:p-8 h-full">
+            <div className="bg-paper-50 border border-graphite-900/20 p-6 md:p-8 h-full">
               <p className="font-golos text-[11px] text-graphite-500 uppercase tracking-[0.15em] mb-4">
                 3. Ваши данные
               </p>
@@ -195,7 +195,7 @@ export default function BookingSection() {
                 </div>
 
                 {date && time && (
-                  <div className="flex items-center gap-2 bg-lime/20 border border-lime px-4 py-3">
+                  <div className="flex items-center gap-2 bg-sky/25 border border-sky px-4 py-3">
                     <Icon name="CalendarCheck" size={16} className="text-graphite-900 shrink-0" />
                     <p className="font-golos text-xs text-graphite-900">
                       {format(date, "d MMMM yyyy", { locale: ru })}, {time}
@@ -208,7 +208,7 @@ export default function BookingSection() {
                     type="checkbox"
                     checked={agreeProcessing}
                     onChange={(e) => setAgreeProcessing(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                    className="mt-1 w-4 h-4 accent-bordo cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     Я&nbsp;согласен с&nbsp;
@@ -228,7 +228,7 @@ export default function BookingSection() {
                     type="checkbox"
                     checked={agreePolicy}
                     onChange={(e) => setAgreePolicy(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                    className="mt-1 w-4 h-4 accent-bordo cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     Ознакомлен с&nbsp;
@@ -248,7 +248,7 @@ export default function BookingSection() {
                     type="checkbox"
                     checked={agreeNewsletter}
                     onChange={(e) => setAgreeNewsletter(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                    className="mt-1 w-4 h-4 accent-bordo cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     <Link
@@ -266,10 +266,10 @@ export default function BookingSection() {
                 <button
                   type="submit"
                   disabled={!canSubmit}
-                  className={`w-full inline-flex items-center justify-center gap-2 font-golos text-sm tracking-widest uppercase font-semibold py-5 transition-all duration-300 ${
+                  className={`w-full inline-flex items-center justify-center gap-2 font-golos text-sm tracking-widest uppercase font-bold py-5 transition-all duration-300 ${
                     canSubmit
-                      ? "bg-graphite-900 text-paper-50 hover:bg-lime hover:text-graphite-900 cursor-pointer"
-                      : "bg-graphite-900/15 text-graphite-400 cursor-not-allowed"
+                      ? "bg-bordo text-white hover:bg-graphite-900 cursor-pointer"
+                      : "bg-graphite-900/10 text-graphite-400 cursor-not-allowed"
                   }`}
                 >
                   {submitting ? "Записываем..." : "Записаться"}

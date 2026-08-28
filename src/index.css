@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 40 30% 96%;
-    --foreground: 150 25% 8%;
-    --card: 40 25% 93%;
-    --card-foreground: 150 25% 8%;
-    --popover: 40 30% 96%;
-    --popover-foreground: 150 25% 8%;
-    --primary: 150 30% 15%;
-    --primary-foreground: 40 30% 96%;
-    --secondary: 40 20% 88%;
-    --secondary-foreground: 150 25% 12%;
-    --muted: 40 15% 88%;
-    --muted-foreground: 150 10% 40%;
-    --accent: 38 52% 60%;
-    --accent-foreground: 150 25% 8%;
+    --background: 340 12% 98%;
+    --foreground: 340 60% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 60% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 60% 8%;
+    --primary: 349 70% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 15% 92%;
+    --secondary-foreground: 340 50% 12%;
+    --muted: 340 12% 92%;
+    --muted-foreground: 340 12% 45%;
+    --accent: 199 73% 78%;
+    --accent-foreground: 340 60% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 20% 82%;
-    --input: 40 20% 82%;
-    --ring: 38 52% 60%;
-    --radius: 0.25rem;
+    --border: 340 14% 86%;
+    --input: 340 14% 86%;
+    --ring: 349 70% 39%;
+    --radius: 0.125rem;
     --sidebar-background: 150 30% 12%;
     --sidebar-foreground: 40 30% 90%;
     --sidebar-primary: 38 52% 60%;
@@ -40,14 +40,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-cream-100 text-ink font-golos;
+    @apply bg-paper text-graphite-900 font-golos;
     scroll-behavior: smooth;
   }
   h1,
   h2,
   h3,
   h4 {
-    @apply font-cormorant;
+    @apply font-display uppercase;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -59,10 +60,10 @@ html {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f0e8;
+  background: #f4f1f2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e;
+  background: #a81d34;
   border-radius: 3px;
 }
 
@@ -156,10 +157,11 @@ html {
 
 /* Gigantic display headline */
 .display-headline {
-  font-family: "Cormorant", Georgia, serif;
-  font-weight: 300;
-  letter-spacing: -0.04em;
-  line-height: 0.92;
+  font-family: "Oswald", "Golos Text", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.88;
 }
 
 /* Marquee-style ticker */
@@ -178,8 +180,22 @@ html {
 /* Subtle paper grain (CSS only) */
 .bg-grain {
   background-image: radial-gradient(
-    rgba(10, 10, 10, 0.045) 1px,
+    rgba(168, 29, 52, 0.05) 1px,
     transparent 1px
   );
   background-size: 3px 3px;
+}
+
+/* Bordo section with sky headline */
+.bg-bordo-grain {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+}
+
+/* Sky highlight marker under words */
+.mark-sky {
+  background: linear-gradient(transparent 62%, #9bd4f0 62%);
 }

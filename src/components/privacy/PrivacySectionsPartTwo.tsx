@@ -2,7 +2,7 @@ export default function PrivacySectionsPartTwo() {
   return (
     <>
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           5. Порядок и&nbsp;условия предоставления согласия на&nbsp;обработку персональных
           данных
         </h2>
@@ -70,7 +70,7 @@ export default function PrivacySectionsPartTwo() {
       </section>
 
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           6. Порядок и&nbsp;условия обработки персональных данных
         </h2>
         <p>

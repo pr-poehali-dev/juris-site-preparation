@@ -8,7 +8,7 @@ export default function NewsletterConsent() {
         <div className="max-w-3xl mx-auto px-6 flex items-center justify-between gap-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors"
+            className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-sky transition-colors"
           >
             <Icon name="ArrowLeft" size={16} />
             На главную
@@ -17,7 +17,7 @@ export default function NewsletterConsent() {
       </header>
 
       <article className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-        <h1 className="font-cormorant text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
+        <h1 className="font-display uppercase text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
           Согласие на получение информационной и рекламной рассылки
         </h1>
 
@@ -42,7 +42,7 @@ export default function NewsletterConsent() {
           </ul>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               1. Каналы направления сообщений
             </h2>
             <ul className="list-disc pl-5 space-y-1.5">
@@ -52,7 +52,7 @@ export default function NewsletterConsent() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               2. Условия обработки
             </h2>
             <p>
@@ -64,7 +64,7 @@ export default function NewsletterConsent() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               3. Срок действия и отказ от рассылки
             </h2>
             <p>

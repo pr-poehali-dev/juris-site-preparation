@@ -4,7 +4,7 @@ export default function PrivacySectionsPartThree() {
   return (
     <>
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           7. Права субъектов персональных данных
         </h2>
         <p>7.1. Пользователь как субъект персональных данных имеет право:</p>
@@ -59,7 +59,7 @@ export default function PrivacySectionsPartThree() {
           в&nbsp;пункте&nbsp;7.2 Политики. Для&nbsp;этого можно воспользоваться формой:{" "}
           <Link
             to="/revoke-consent"
-            className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
+            className="text-graphite-900 underline underline-offset-2 hover:text-sky transition-colors"
           >
             заявление об&nbsp;отзыве согласия на&nbsp;обработку персональных данных
           </Link>
@@ -73,7 +73,7 @@ export default function PrivacySectionsPartThree() {
       </section>
 
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           8. Обязанности Оператора и&nbsp;меры по&nbsp;обеспечению безопасности персональных
           данных
         </h2>
@@ -148,7 +148,7 @@ export default function PrivacySectionsPartThree() {
       </section>
 
       <section>
-        <h2 className="font-cormorant text-2xl text-graphite-900 mb-4">
+        <h2 className="font-display uppercase text-2xl text-graphite-900 mb-4">
           9. Заключительные положения
         </h2>
         <p>9.1. Настоящая Политика является общедоступным документом и&nbsp;подлежит размещению на&nbsp;Сайте.</p>

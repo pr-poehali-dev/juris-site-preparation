@@ -127,7 +127,7 @@ export default function BookingManage() {
           <p className="font-golos text-sm text-graphite-500 text-center">Загрузка...</p>
         ) : notFound || !booking ? (
           <div className="text-center">
-            <h1 className="font-cormorant text-4xl text-graphite-900 leading-tight">
+            <h1 className="font-display uppercase text-4xl text-graphite-900 leading-tight">
               Запись не найдена
             </h1>
             <p className="font-golos text-sm text-graphite-500 mt-4">
@@ -135,7 +135,7 @@ export default function BookingManage() {
             </p>
             <Link
               to="/"
-              className="mt-8 inline-flex items-center gap-2 bg-graphite-900 text-paper-50 font-golos text-sm font-medium px-7 py-4 hover:bg-lime hover:text-graphite-900 transition-all duration-300"
+              className="mt-8 inline-flex items-center gap-2 bg-graphite-900 text-paper-50 font-golos text-sm font-medium px-7 py-4 hover:bg-sky hover:text-graphite-900 transition-all duration-300"
             >
               <Icon name="ArrowLeft" size={16} />
               На главную
@@ -143,7 +143,7 @@ export default function BookingManage() {
           </div>
         ) : (
           <div className="bg-paper-50 border border-graphite-900 p-8 md:p-10">
-            <h1 className="font-cormorant text-3xl md:text-4xl text-graphite-900 leading-tight">
+            <h1 className="font-display uppercase text-3xl md:text-4xl text-graphite-900 leading-tight">
               {booking.status === "cancelled" ? "Запись отменена" : "Ваша запись на консультацию"}
             </h1>
 
@@ -236,7 +236,7 @@ export default function BookingManage() {
                     disabled={!newDate || !newTime || working}
                     className={`inline-flex items-center justify-center gap-2 font-golos text-sm font-medium px-6 py-4 transition-all duration-300 ${
                       newDate && newTime && !working
-                        ? "bg-graphite-900 text-paper-50 hover:bg-lime hover:text-graphite-900 cursor-pointer"
+                        ? "bg-graphite-900 text-paper-50 hover:bg-sky hover:text-graphite-900 cursor-pointer"
                         : "bg-graphite-900/15 text-graphite-400 cursor-not-allowed"
                     }`}
                   >

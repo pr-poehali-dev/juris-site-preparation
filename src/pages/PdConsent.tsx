@@ -8,7 +8,7 @@ export default function PdConsent() {
         <div className="max-w-3xl mx-auto px-6 flex items-center justify-between gap-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors"
+            className="inline-flex items-center gap-2 font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-sky transition-colors"
           >
             <Icon name="ArrowLeft" size={16} />
             На главную
@@ -17,7 +17,7 @@ export default function PdConsent() {
       </header>
 
       <article className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-        <h1 className="font-cormorant text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
+        <h1 className="font-display uppercase text-4xl md:text-5xl text-graphite-900 leading-tight tracking-tight">
           Согласие на обработку персональных данных пользователя сайта
         </h1>
 
@@ -32,7 +32,7 @@ export default function PdConsent() {
           </p>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               1. Цели обработки персональных данных
             </h2>
             <ul className="list-disc pl-5 space-y-1.5">
@@ -53,7 +53,7 @@ export default function PdConsent() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               2. Перечень персональных данных, на обработку которых даётся согласие
             </h2>
             <ul className="list-disc pl-5 space-y-1.5">
@@ -71,7 +71,7 @@ export default function PdConsent() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               3. Перечень действий с персональными данными и способы обработки
             </h2>
             <p>
@@ -91,7 +91,7 @@ export default function PdConsent() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               4. Срок действия согласия и порядок его отзыва
             </h2>
             <p>
@@ -104,7 +104,7 @@ export default function PdConsent() {
               заявления в форме электронного документа на адрес электронной почты:{" "}
               <a
                 href="mailto:zakaraevapatimat6@gmail.com"
-                className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
+                className="text-graphite-900 underline underline-offset-2 hover:text-sky transition-colors"
               >
                 zakaraevapatimat6@gmail.com
               </a>
@@ -114,14 +114,14 @@ export default function PdConsent() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl text-graphite-900 mb-3">
+            <h2 className="font-display uppercase text-2xl text-graphite-900 mb-3">
               5. Заключительные положения
             </h2>
             <p>
               Я подтверждаю, что ознакомлен(а) с{" "}
               <Link
                 to="/privacy"
-                className="text-graphite-900 underline underline-offset-2 hover:text-lime transition-colors"
+                className="text-graphite-900 underline underline-offset-2 hover:text-sky transition-colors"
               >
                 Политикой обработки персональных данных
               </Link>{" "}
@@ -140,7 +140,7 @@ export default function PdConsent() {
         <div className="mt-16 pt-8 border-t border-graphite-900/15">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-golos text-sm uppercase tracking-[0.15em] text-graphite-900 hover:text-lime transition-colors"
+            className="inline-flex items-center gap-2 font-golos text-sm uppercase tracking-[0.15em] text-graphite-900 hover:text-sky transition-colors"
           >
             <Icon name="ArrowLeft" size={16} />
             Вернуться на главную

@@ -46,25 +46,25 @@ export default function ContactsFooter() {
   return (
     <>
       {/* ─── CTA BANNER ─── */}
-      <section className="bg-graphite-900 py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grain opacity-20 pointer-events-none" />
+      <section className="bg-bordo py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-bordo-grain opacity-60 pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-6">
           <div className="reveal flex items-center gap-2 mb-8">
-            <Tag variant="lime">Start</Tag>
-            <span className="font-golos text-xs uppercase tracking-[0.2em] text-graphite-400">
+            <Tag variant="sky">Start</Tag>
+            <span className="font-golos text-xs uppercase tracking-[0.2em] font-bold text-white/70">
               Первая консультация — бесплатно
             </span>
           </div>
-          <h2 className="reveal d2 display-headline text-paper-50 text-[clamp(2.75rem,8vw,6.5rem)]">
+          <h2 className="reveal d2 display-headline text-white text-[clamp(2.75rem,8vw,6.5rem)]">
             Готовы начать?<br />
-            <span className="italic font-light text-graphite-400">Я&nbsp;тоже.</span>
+            <span className="text-sky">Я&nbsp;тоже.</span>
           </h2>
-          <p className="reveal d3 font-golos text-base text-graphite-300 mt-8 mb-10 max-w-xl leading-relaxed">
+          <p className="reveal d3 font-golos text-base text-white/80 mt-8 mb-10 max-w-xl leading-relaxed">
             Разберём вашу ситуацию, определим стратегию и&nbsp;оценим перспективы уже
             при&nbsp;первой встрече. Без воды, без скрытых платежей.
           </p>
           <a href="#booking"
-            className="reveal d4 inline-flex items-center gap-3 bg-lime text-graphite-900 font-golos text-sm font-semibold uppercase tracking-widest px-9 py-5 hover:bg-paper-50 transition-all duration-300">
+            className="reveal d4 inline-flex items-center gap-3 bg-sky text-graphite-900 font-golos text-sm font-bold uppercase tracking-widest px-9 py-5 hover:bg-white transition-all duration-300">
             Записаться на консультацию
             <Icon name="ArrowUpRight" size={18} />
           </a>
@@ -76,12 +76,12 @@ export default function ContactsFooter() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 md:gap-16">
           <div className="md:col-span-5 reveal">
             <div className="flex items-center gap-2 mb-5">
-              <Tag>Контакты</Tag>
+              <Tag variant="bordo">Контакты</Tag>
               <Tag variant="outline">24/7 заявки</Tag>
             </div>
-            <h2 className="font-cormorant text-5xl md:text-6xl text-graphite-900 leading-[0.95] tracking-tight">
+            <h2 className="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-graphite-900 leading-[0.95] font-bold">
               Свяжитесь<br />
-              <span className="italic">напрямую</span>
+              <span className="text-bordo">напрямую</span>
             </h2>
             <p className="font-golos text-sm text-graphite-500 mt-6 max-w-xs">
               Отвечаю лично в&nbsp;рабочее время. Заявки с&nbsp;сайта обрабатываю в&nbsp;течение часа.
@@ -93,7 +93,7 @@ export default function ContactsFooter() {
                 { icon: "Clock", label: "Часы работы", value: "Пн–Пт: 09:00 — 19:00" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4 border-t border-graphite-900/15 pt-4">
-                  <Icon name={c.icon} size={16} className="text-graphite-900 mt-1 shrink-0" />
+                  <Icon name={c.icon} size={16} className="text-bordo mt-1 shrink-0" />
                   <div>
                     <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-graphite-400 mb-0.5">{c.label}</p>
                     <p className="font-golos text-sm text-graphite-900 font-medium">{c.value}</p>
@@ -104,15 +104,15 @@ export default function ContactsFooter() {
           </div>
 
           <div className="md:col-span-7 reveal d2">
-            <div className="bg-paper-50 border border-graphite-900 p-8 md:p-10 relative">
+            <div className="bg-paper-50 border border-graphite-900/20 p-8 md:p-10 relative">
               <div className="flex items-start justify-between mb-8">
                 <div>
-                  <h3 className="font-cormorant text-3xl md:text-4xl text-graphite-900 leading-tight">
-                    Оставить <span className="italic">заявку</span>
+                  <h3 className="font-display uppercase text-2xl md:text-3xl font-bold text-graphite-900 leading-[1.05]">
+                    Оставить <span className="text-bordo">заявку</span>
                   </h3>
                   <p className="font-golos text-xs text-graphite-500 mt-2">Перезвоню в&nbsp;течение часа</p>
                 </div>
-                <Tag variant="lime">Free</Tag>
+                <Tag variant="sky">Free</Tag>
               </div>
               <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
@@ -141,7 +141,7 @@ export default function ContactsFooter() {
                     type="checkbox"
                     checked={agreeProcessing}
                     onChange={(e) => setAgreeProcessing(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                    className="mt-1 w-4 h-4 accent-bordo cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     Я&nbsp;согласен с&nbsp;
@@ -161,7 +161,7 @@ export default function ContactsFooter() {
                     type="checkbox"
                     checked={agreePolicy}
                     onChange={(e) => setAgreePolicy(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                    className="mt-1 w-4 h-4 accent-bordo cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     Ознакомлен с&nbsp;
@@ -181,7 +181,7 @@ export default function ContactsFooter() {
                     type="checkbox"
                     checked={agreeNewsletter}
                     onChange={(e) => setAgreeNewsletter(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-lime cursor-pointer shrink-0"
+                    className="mt-1 w-4 h-4 accent-bordo cursor-pointer shrink-0"
                   />
                   <span className="font-golos text-xs text-graphite-700 leading-relaxed group-hover:text-graphite-900 transition-colors">
                     <Link
@@ -198,10 +198,10 @@ export default function ContactsFooter() {
                 <button
                   type="submit"
                   disabled={!agreeProcessing || !agreePolicy || submitting}
-                  className={`w-full inline-flex items-center justify-center gap-2 font-golos text-sm tracking-widest uppercase font-semibold py-5 transition-all duration-300 ${
+                  className={`w-full inline-flex items-center justify-center gap-2 font-golos text-sm tracking-widest uppercase font-bold py-5 transition-all duration-300 ${
                     agreeProcessing && agreePolicy && !submitting
-                      ? "bg-graphite-900 text-paper-50 hover:bg-lime hover:text-graphite-900 cursor-pointer"
-                      : "bg-graphite-900/15 text-graphite-400 cursor-not-allowed"
+                      ? "bg-bordo text-white hover:bg-graphite-900 cursor-pointer"
+                      : "bg-graphite-900/10 text-graphite-400 cursor-not-allowed"
                   }`}
                 >
                   {submitting ? "Отправляем..." : "Отправить заявку"}
@@ -218,7 +218,7 @@ export default function ContactsFooter() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex items-center gap-2">
-              <span className="inline-block w-2 h-2 bg-lime border border-paper-50" />
+              <span className="inline-flex items-center justify-center w-7 h-7 bg-sky text-graphite-900 text-[11px] font-bold">PZ</span>
               <p className="font-golos text-sm font-semibold tracking-tight">
                 Patimat&nbsp;Zakaryaeva
                 <span className="text-graphite-400 font-normal"> / Law</span>
@@ -227,7 +227,7 @@ export default function ContactsFooter() {
             <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
               {NAV_LINKS.map((l) => (
                 <a key={l.href} href={l.href}
-                  className="font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors">
+                  className="font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-sky transition-colors">
                   {l.label}
                 </a>
               ))}
@@ -235,7 +235,7 @@ export default function ContactsFooter() {
             <div className="flex flex-col md:items-end gap-1.5">
               <Link
                 to="/privacy"
-                className="font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-lime transition-colors"
+                className="font-golos text-xs uppercase tracking-[0.15em] text-graphite-300 hover:text-sky transition-colors"
               >
                 Политика обработки персональных данных
               </Link>
