@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
-import { NAV_LINKS, LAWYER_PHOTO } from "./data";
+import { NAV_LINKS, LAWYER_PHOTO, CASES } from "./data";
 import Tag from "./Tag";
 
 export default function HeaderHero() {
@@ -113,9 +113,9 @@ export default function HeaderHero() {
           {/* metrics strip */}
           <div className="reveal grid grid-cols-2 md:grid-cols-4 border-l border-t border-graphite-900/15 mt-0">
             {[
-              { v: "180+", l: "дел в год" },
-              { v: "87%", l: "выигранных споров" },
-              { v: "410 млн", l: "взыскано для клиентов" },
+              { v: "10+ лет", l: "юридической практики" },
+              { v: `${CASES.length} дел`, l: "с карточками в открытом доступе" },
+              { v: "× 10", l: "максимальное снижение неустойки" },
               { v: "1 час", l: "ответ на заявку" },
             ].map((m) => (
               <div key={m.l} className="bg-paper-50 border-r border-b border-graphite-900/15 px-6 py-7">
@@ -154,4 +154,3 @@ export default function HeaderHero() {
     </>
   );
 }
-
