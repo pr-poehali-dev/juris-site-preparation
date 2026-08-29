@@ -14,9 +14,9 @@ export default function AboutServices() {
               <div className="relative">
                 <span className="font-display uppercase text-6xl font-bold text-sky leading-none block mb-4">«</span>
                 <p className="font-display uppercase text-2xl md:text-3xl text-white leading-[1.15] font-medium">
-                  Хороший юрист — это не&nbsp;только знание законов,
-                  но&nbsp;и&nbsp;умение находить решение там,
-                  где другие видят тупик
+                  Устраняю только те риски,
+                  которые реально могут навредить бизнесу —
+                  без лишней бюрократии
                 </p>
                 <div className="mt-8 flex items-center gap-3 pt-6 border-t border-white/20">
                   <span className="inline-block w-2 h-2 bg-sky" />
