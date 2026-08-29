@@ -35,7 +35,7 @@ export default function AboutServices() {
             </div>
             <h2 className="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-graphite-900 leading-[0.95] font-bold">
               Практика<br />
-              <span className="text-bordo">без воды</span> и&nbsp;лишних слов
+              <span className="mark-sky">без воды</span> и&nbsp;лишних слов
             </h2>
             <div className="mt-8 space-y-5 text-graphite-700 text-base leading-relaxed font-golos max-w-xl">
               <p>
@@ -56,7 +56,8 @@ export default function AboutServices() {
                 { icon: "Wallet", t: "Прозрачно", d: "Цена фиксируется письменно" },
                 { icon: "Target", t: "По делу", d: "Только рабочая стратегия" },
               ].map((f) => (
-                <div key={f.t} className="bg-paper-50 p-5">
+                <div key={f.t} className="bg-paper-50 p-5 relative">
+                  <span className="absolute top-0 left-0 w-10 h-[3px] bg-sky" />
                   <Icon name={f.icon} size={20} className="text-bordo mb-3" />
                   <p className="font-display uppercase text-lg font-bold text-graphite-900 leading-none">{f.t}</p>
                   <p className="font-golos text-xs text-graphite-500 mt-2 leading-relaxed">{f.d}</p>
@@ -68,7 +69,7 @@ export default function AboutServices() {
       </section>
 
       {/* ─── SERVICES ─── */}
-      <section id="services" className="py-24 md:py-32 bg-paper-100 border-y border-graphite-900/10">
+      <section id="services" className="py-24 md:py-32 bg-sky/10 border-y border-sky/40">
         <div className="max-w-7xl mx-auto px-6">
           <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
             <div>
@@ -120,4 +121,3 @@ export default function AboutServices() {
     </>
   );
 }
-

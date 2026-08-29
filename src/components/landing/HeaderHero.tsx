@@ -118,7 +118,8 @@ export default function HeaderHero() {
               { v: "× 10", l: "максимальное снижение неустойки" },
               { v: "1 час", l: "ответ на заявку" },
             ].map((m) => (
-              <div key={m.l} className="bg-paper-50 border-r border-b border-graphite-900/15 px-6 py-7">
+              <div key={m.l} className="bg-paper-50 border-r border-b border-graphite-900/15 px-6 py-7 relative">
+                <span className="absolute top-0 left-0 w-12 h-[3px] bg-sky" />
                 <p className="font-display uppercase text-3xl md:text-4xl font-bold text-bordo leading-none">{m.v}</p>
                 <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-graphite-500 font-semibold mt-2">{m.l}</p>
               </div>
