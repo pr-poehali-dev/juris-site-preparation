@@ -58,8 +58,8 @@ export default function HeaderHero() {
           <div className="bg-bordo relative overflow-hidden px-6 sm:px-10 md:px-14 py-12 md:py-16">
             <div className="absolute inset-0 bg-bordo-grain opacity-70 pointer-events-none" />
 
-            <div className="relative grid md:grid-cols-12 gap-10 md:gap-12 items-center">
-              <div className="md:col-span-7">
+            <div className="relative grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+              <div className="md:col-span-6">
                 <div className="reveal d1 flex flex-wrap items-center gap-2 mb-8">
                   <span className="inline-flex items-center gap-2 bg-sky text-graphite-900 px-3 py-1.5 text-[10px] font-golos font-bold uppercase tracking-[0.18em]">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-bordo animate-pulse" />
@@ -70,7 +70,7 @@ export default function HeaderHero() {
                   </span>
                 </div>
 
-                <h1 className="reveal d2 display-headline text-white text-[clamp(2.75rem,8.5vw,6.5rem)]">
+                <h1 className="reveal d2 display-headline text-white text-[clamp(2.75rem,7.5vw,5.5rem)]">
                   Спорить<br />
                   <span className="text-sky">выгоднее,</span><br />
                   чем терпеть
@@ -94,16 +94,22 @@ export default function HeaderHero() {
                 </div>
               </div>
 
-              <div className="reveal d3 md:col-span-5">
-                <div className="relative">
-                  <img
-                    src={LAWYER_PHOTO}
-                    alt="Патимат Закарьяева, юрист"
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-sky px-5 py-3 flex items-baseline justify-between gap-3">
-                    <p className="font-display uppercase text-lg font-bold text-graphite-900 leading-none">Личное</p>
-                    <p className="font-golos text-[10px] uppercase tracking-[0.18em] text-graphite-800 font-bold">ведение дел</p>
+              <div className="reveal d3 md:col-span-6">
+                <div className="relative max-w-md md:max-w-none mx-auto">
+                  <span className="absolute -top-4 -right-4 w-full h-full border-2 border-sky/70 pointer-events-none hidden sm:block" />
+                  <div className="relative">
+                    <img
+                      src={LAWYER_PHOTO}
+                      alt="Патимат Закарьяева, юрист"
+                      className="w-full aspect-[4/5] object-cover object-top"
+                    />
+                    <span className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 bg-bordo border-2 border-white/90 text-white text-xs font-display font-bold">
+                      PZ
+                    </span>
+                    <div className="absolute bottom-0 left-0 right-0 bg-sky px-5 py-3.5 flex items-baseline justify-between gap-3">
+                      <p className="font-display uppercase text-lg font-bold text-graphite-900 leading-none">Личное</p>
+                      <p className="font-golos text-[10px] uppercase tracking-[0.18em] text-graphite-800 font-bold">ведение дел</p>
+                    </div>
                   </div>
                 </div>
               </div>
