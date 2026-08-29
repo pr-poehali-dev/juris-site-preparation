@@ -71,14 +71,14 @@ export default function HeaderHero() {
                 </div>
 
                 <h1 className="reveal d2 display-headline text-white text-[clamp(2.75rem,7.5vw,5.5rem)]">
-                  Спорить<br />
-                  <span className="text-sky">выгоднее,</span><br />
-                  чем терпеть
+                  Вижу риски<br />
+                  <span className="text-sky">раньше,</span><br />
+                  чем они станут проблемой
                 </h1>
 
                 <p className="reveal d3 font-golos text-base md:text-lg text-white/80 leading-relaxed max-w-lg mt-8">
-                  Юрист для бизнеса, который считает деньги. Веду арбитражи, взыскиваю
-                  долги и&nbsp;закрываю корпоративные конфликты — быстро и&nbsp;по&nbsp;делу.
+                  Юрист с&nbsp;бизнес-мышлением. Устраняю только те риски, которые
+                  реально могут навредить делу — без лишней бюрократии и&nbsp;поиска проблем на&nbsp;пустом месте.
                 </p>
 
                 <div className="reveal d4 flex flex-col sm:flex-row gap-3 mt-9">
