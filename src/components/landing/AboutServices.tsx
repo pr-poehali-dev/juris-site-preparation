@@ -64,6 +64,36 @@ export default function AboutServices() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-14">
+              <p className="font-golos text-[11px] uppercase tracking-[0.2em] text-graphite-400 font-bold mb-6">
+                Образование и опыт
+              </p>
+              <div className="space-y-0">
+                {[
+                  { year: "2018", icon: "GraduationCap", t: "МГПУ, юридический факультет", d: "Московский городской педагогический университет" },
+                  { year: "2018 — 2021", icon: "Landmark", t: "Помощник судьи", d: "Работа в судебной системе" },
+                  { year: "2020", icon: "BookOpen", t: "Магистратура МГЮА им. О.Е. Кутафина", d: "Направление «Частное право»" },
+                  { year: "2022", icon: "Briefcase", t: "Частная практика", d: "Собственная юридическая практика" },
+                  { year: "2024", icon: "Award", t: "Повышение квалификации, Moscow Digital School", d: "" },
+                  { year: "2024", icon: "Award", t: "Повышение квалификации, Школа IT-юриста", d: "" },
+                ].map((e, i, arr) => (
+                  <div key={i} className="flex gap-5 relative">
+                    <div className="flex flex-col items-center shrink-0">
+                      <div className="w-9 h-9 bg-bordo flex items-center justify-center shrink-0">
+                        <Icon name={e.icon} size={16} className="text-white" />
+                      </div>
+                      {i < arr.length - 1 && <span className="w-px flex-1 bg-graphite-900/15 my-1" />}
+                    </div>
+                    <div className="pb-7">
+                      <p className="font-golos text-[11px] uppercase tracking-[0.15em] text-sky-dark font-bold">{e.year}</p>
+                      <p className="font-display uppercase text-base font-bold text-graphite-900 mt-1 leading-snug">{e.t}</p>
+                      {e.d && <p className="font-golos text-xs text-graphite-500 mt-1">{e.d}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
