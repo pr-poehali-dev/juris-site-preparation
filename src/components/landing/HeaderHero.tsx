@@ -102,8 +102,8 @@ export default function HeaderHero() {
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-sky px-5 py-3 flex items-baseline justify-between gap-3">
-                    <p className="font-display uppercase text-lg font-bold text-graphite-900 leading-none">10+ лет</p>
-                    <p className="font-golos text-[10px] uppercase tracking-[0.18em] text-graphite-800 font-bold">практики</p>
+                    <p className="font-display uppercase text-lg font-bold text-graphite-900 leading-none">Личное</p>
+                    <p className="font-golos text-[10px] uppercase tracking-[0.18em] text-graphite-800 font-bold">ведение дел</p>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function HeaderHero() {
           {/* metrics strip */}
           <div className="reveal grid grid-cols-2 md:grid-cols-4 border-l border-t border-graphite-900/15 mt-0">
             {[
-              { v: "10+ лет", l: "юридической практики" },
+              { v: "Лично", l: "веду каждое дело" },
               { v: `${CASES.length} дел`, l: "с карточками в открытом доступе" },
               { v: "× 10", l: "максимальное снижение неустойки" },
               { v: "1 час", l: "ответ на заявку" },
