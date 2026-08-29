@@ -39,7 +39,7 @@ export default function AboutServices() {
             </h2>
             <div className="mt-8 space-y-5 text-graphite-700 text-base leading-relaxed font-golos max-w-xl">
               <p>
-                Я&nbsp;— практикующий юрист с&nbsp;10-летним опытом в&nbsp;коммерческом праве
+                Я&nbsp;— практикующий юрист с&nbsp;опытом в&nbsp;коммерческом праве
                 и&nbsp;арбитражных спорах. Работаю как индивидуальный предприниматель, поэтому
                 каждому клиенту достаётся максимум времени и&nbsp;внимания.
               </p>
