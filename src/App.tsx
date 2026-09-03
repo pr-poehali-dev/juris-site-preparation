@@ -11,6 +11,7 @@ import RevokeConsent from "./pages/RevokeConsent";
 import PdConsent from "./pages/PdConsent";
 import ThankYou from "./pages/ThankYou";
 import BookingManage from "./pages/BookingManage";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/pd-consent" element={<PdConsent />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/booking-manage" element={<BookingManage />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

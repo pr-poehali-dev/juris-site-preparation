@@ -1,0 +1,1 @@
+ALTER TABLE contact_requests ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'new';
