@@ -29,6 +29,9 @@ export default function ContactsFooter() {
         body: JSON.stringify({ name, phone, message }),
       });
       if (!res.ok) throw new Error("request failed");
+      if (typeof window.ym === "function") {
+        window.ym(112240620, "reachGoal", "abonent_zayavka");
+      }
       setName("");
       setPhone("");
       setMessage("");
