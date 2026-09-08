@@ -39,8 +39,8 @@ def send_email(to_email: str, subject: str, lines: list):
             server.starttls()
             server.login(OWNER_EMAIL, app_password)
             server.sendmail(OWNER_EMAIL, to_email, msg.as_string())
-    except smtplib.SMTPException:
-        pass
+    except smtplib.SMTPException as e:
+        print(f'SMTP error sending to {to_email}: {e}')
 
 
 def handler(event: dict, context) -> dict:
