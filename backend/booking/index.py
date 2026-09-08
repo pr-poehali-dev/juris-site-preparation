@@ -35,11 +35,11 @@ def send_email(to_email: str, subject: str, lines: list):
     msg.attach(MIMEText('\n'.join(lines), 'plain', 'utf-8'))
 
     try:
-        with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        with smtplib.SMTP('smtp.gmail.com', 587, timeout=4) as server:
             server.starttls()
             server.login(OWNER_EMAIL, app_password)
             server.sendmail(OWNER_EMAIL, to_email, msg.as_string())
-    except smtplib.SMTPException as e:
+    except (smtplib.SMTPException, OSError) as e:
         print(f'SMTP error sending to {to_email}: {e}')
 
 
